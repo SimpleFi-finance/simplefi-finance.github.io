@@ -1,8 +1,11 @@
 import React from 'react';
 import { Icon } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
+
 export const Logo = (): React.ReactElement=> {
+    const navigate = useNavigate();
     return (
-        <Icon viewBox="0 0 127 50" width="127" height="50">
+        <Icon viewBox="0 0 127 50" width="127" height="50" onClick={() => navigate('/')} style={{cursor: 'pointer'}}>
             <rect width="127" height="50" fill="url(#pattern0)"/>
             <defs>
             <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
