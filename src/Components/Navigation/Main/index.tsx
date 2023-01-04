@@ -4,7 +4,7 @@ import { Footer } from '../Footer'
 
 export const Main = (props: FlexProps) => {
   return (
-    <Flex as="main" role="main" direction="column" flex="1" py="1" {...props} px="10">
+    <Flex as="main" role="main" direction="column" flex="1" py="1" {...props}>
       <VStack
         divider={<StackDivider borderColor='gray.200' px="5px" />}
         spacing={4}

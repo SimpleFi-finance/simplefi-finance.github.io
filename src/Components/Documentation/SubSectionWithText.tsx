@@ -16,19 +16,17 @@ import {
 
   export const SubSectionWithText = (props: IProps) => (
     <Box as="section" bg="inherit" pt={{ base: '4', md: '8' }} pb={{ base: '6', md: '8' }}>
-        <Stack spacing="4" direction={{ base: 'column', md: 'row' }} justify="space-between">
-          <Stack spacing="1">
-            <Text fontSize={useBreakpointValue({ base: 'md', md: 'md' })} fontWeight="semibold" paddingBottom={2}>
-              {props.title}
-            </Text>
-            <Box py={2} px={8}>
-              {props.text?.map(el => (
-                <Box pb={1} key={el.split(' ')[0]}>
-                  <Text >{el}</Text>
-                </Box>))}
-              {props.children && props.children}
-            </Box>
-          </Stack>
-        </Stack>
+      <Stack spacing="1">
+        <Text fontSize={useBreakpointValue({ base: 'md', md: 'md' })} fontWeight="semibold" paddingBottom={2}>
+          {props.title}
+        </Text>
+        <Box py={2} px={8} width="100%">
+          {props.text?.map(el => (
+            <Box pb={1} key={el.split(' ')[0]}>
+              <Text >{el}</Text>
+            </Box>))}
+          {props.children && props.children}
+        </Box>
+      </Stack>
     </Box>
   )

@@ -1,12 +1,15 @@
 import React from 'react';
-import { UnorderedList, ListItem, Text, HStack, Table, Thead, Tr, Th, Td, Tbody, Icon, Container, VStack} from '@chakra-ui/react';
+import { UnorderedList, ListItem, Text, HStack, Table, Thead, Tr, Th, Td, Tbody, Icon, VStack, useBreakpointValue, Box, Stack} from '@chakra-ui/react';
 import { AiOutlineApi } from "react-icons/ai";
 import { SectionHeaderWithDescription, SubSectionWithText } from '../../../Components';
+import {text} from  './text';
+
 interface IPropsLink {
     title: string;
     text: string;
     link: string
 }
+
 const LinkToEndpoints = (props: IPropsLink) => {
     return (
         <VStack align="left" pt={8}>
@@ -21,269 +24,75 @@ const LinkToEndpoints = (props: IPropsLink) => {
     )
 }
 
+const generateParagraph = (paragraphs: any[], key: string) => {
+    return paragraphs.map(p => {
+        return (
+            <>
+                <Box as="section" bg="inherit" p={{ base: '1', md: '1' }}>
+                    <Stack spacing="1">
+                        {p.map((el: any) => {
+                            if (el.type === "title" && typeof el.item === 'string') return (
+                                <Text fontSize={useBreakpointValue({ base: 'md', md: 'md', lg: 'lg' })} fontWeight="semibold" paddingBottom={4} paddingTop={4}>
+                                    {el.item}
+                                </Text>
+                            )
+                            if (el.type === "text" && typeof el.item === 'string') return (
+                                <Text key={el.item.replace(' ', '-')} px={0} pt={1}>{el.item}</Text>
+                            )
+                            if (el.type === "list" && Array.isArray(el.item)) return (
+                                // todo make recursive
+                                <UnorderedList pl={useBreakpointValue({base: 2, md: 4, sm: 1, lg: 6})} pb={1}>
+                                    {el.item.map((item: string) => (<ListItem key={item.replace(' ', '-')}>{item}</ListItem>))}
+                                </UnorderedList>
+                            )
+                            if (el.type === "component") return el.item as JSX.Element;
+                            if (el.type === "code") return (
+                                <Text as="pre" left={5} position="relative" width="fit-content" mx={8} px={4} py={2} bg="gray.100" borderRadius="md" overflow="auto" whiteSpace="pre-wrap" wordBreak="break-word" fontSize="sm" lineHeight="tall" color="black">
+                                    {el.item as string}
+                                </Text>
+                            )
+                            if (el.type === "table" && typeof el.item === 'object' && "headers" in el.item && "rows" in el.item) return (
+                                <Table variant='simple'  
+                                    size={useBreakpointValue({default: "lg", sm: 'xs', md: 'md', lg: 'lg' })} 
+                                    bg="inherit" 
+                                    width={useBreakpointValue({default: "100%", sm: '100%', md: '100%', lg: '100%' })} 
+                                    p={0}
+                                >
+                                    <Thead>
+                                        <Tr>
+                                            {el.item.headers.map((header: string) => (<Th key={`${header}-${key}`}>{header}</Th>))}
+                                        </Tr>
+                                    </Thead>
+                                    <Tbody>
+                                        {el.item.rows.map((row: any[], index: number) => (
+                                            <Tr key={row[0]}>
+                                                {row.map((cell: string, indexCell: number) => (<Td key={`${index}-${indexCell}-${key}`}>{cell}</Td>))}
+                                            </Tr>
+                                        ))}
+                                    </Tbody>
+                                </Table>
+                            )   
+                        })}
+                    </Stack>
+                </Box>
+            </>
+        )
+    })
+}
 export const APIDocs = () => {
-    const errorsData: {
-        code: string;
-        message: string;
-    }[] = [
-        {
-            code: '200s',
-            message: 'Success'
-        },{
-            code: '400s',
-            message: 'Client error'
-        },
-        {
-            code: '500s',
-            message: 'Server error'
-        }
-    ];
+
     return (
         <>
-            {/* <UnorderedList>
-                <ListItem>
-                    <a
-                    href="#73879203-6f05-4503-840e-4fdec8d275f7"
-                    >
-                        <em>Latest updates</em>
-                    </a>
-                </ListItem>
-                <ListItem>
-                    <a
-                    href="#72e602bb-567c-4f46-91ed-c81fba85f0ac"
-                    >
-                    Introduction
-                    </a>
-                </ListItem>
-                <ListItem>
-                <a
-                href="#1965581c-7297-4b90-acfe-564a93068f43"
-                >
-                Getting Started
-                </a>
-                </ListItem>
-                <ListItem>
-                <a
-                href="#1ce76986-1849-4593-b7ba-23703f00537e"
-                >
-                Authentication
-                </a>
-                </ListItem>
-                <ListItem>
-                <a
-                href="#0da28270-b7f4-453d-b51c-b7ad0cd39aaf"
-                >
-                Rate limiting
-                </a>
-                </ListItem>
-                <ListItem>
-                <a
-                href="#1ce76986-1849-4593-b7ba-23703f00537e"
-                >
-                Authentication
-                </a>
-                </ListItem>
-                <ListItem>
-                <a
-                href="#0ce9c381-8494-4213-af46-53a0469069c9"
-                >
-                Errors
-                </a>
-                </ListItem>
-                <ListItem>
-                <a
-                href="#c26781e3-e889-4662-8999-33816a1ecc15"
-                >
-                Core Services
-                </a>
-                </ListItem>
-                <ListItem>
-                <a
-                href="#c668cdad-6cc3-479f-9d80-4d0744c1a3c9"
-                >
-                Pricing Data
-                </a>
-                </ListItem>
-                <ListItem>
-                <a
-                href="#0b38047b-cba9-447e-b452-9f2b65a7fc14"
-                >
-                Core Data
-                </a>
-                </ListItem>
-                <ListItem>
-                <a
-                href="#b9f00bd5-2dad-4985-830a-b682029d899b"
-                >
-                Chains Data
-                </a>
-                </ListItem>
-            </UnorderedList> */}
-            <SectionHeaderWithDescription title="Latest updates">
-                <p id="518f3f06-adbe-4f4e-8632-264729c10ee2" className="">
-                    <em>Version 2.2 - deployed on xxx</em>
-                </p>
-                <p id="1b8242c6-eb9b-4973-be95-53a434dc6dba" className="">
-                    <em>
-                        <strong>Increased coverage:</strong>
-                    </em>
-                </p>
-                <ul
-                id="80ef90f4-45cb-4efc-8fc3-dca6e2f956ce"
-                className="bulleted-list"
-                >
-                <li style={{ listStyleType: 'disc' }}>
-                    <em>
-                    added new chains and protocols (and therefore new markets
-                    and tokens
-                    </em>
-                </li>
-                </ul>
-                <p id="bdf4a743-856b-4b93-bbba-9f7817af084c" className="">
-                <em>
-                    <strong>Better pricing:</strong>
-                </em>
-                </p>
-                <ul
-                id="df49c01e-e993-41f8-8426-9ffbf5936f57"
-                className="bulleted-list"
-                >
-                <li style={{ listStyleType: 'disc' }}>
-                    <em>
-                    increased precision of pricing calculations by increasing
-                    decimals
-                    </em>
-                </li>
-                </ul>
-                <ul
-                id="98aa890f-e5b1-4adc-947b-50b9deea6f55"
-                className="bulleted-list"
-                >
-                <li style={{ listStyleType: 'disc' }}>
-                    <em>
-                    increased accuracy by adding more input token prices to
-                    avoid derivations
-                    </em>
-                </li>
-                </ul>
-                <p id="8f441b99-3891-4cd4-87b6-4adeb35f51ec" className="">
-                <em>
-                    <strong>Better scalability:</strong>
-                </em>
-                </p>
-                <ul
-                id="82e5f721-0d46-4a61-994a-1d44970777a1"
-                className="bulleted-list"
-                >
-                <li style={{ listStyleType: 'disc' }}>
-                    <em>
-                    Refactored the database to better filter markets and tokens
-                    by chain
-                    </em>
-                </li>
-                </ul>
-                <ul
-                id="4881137f-8037-4fff-a886-0d8ab3d7555b"
-                className="bulleted-list"
-                >
-                <li style={{ listStyleType: 'disc' }}>
-                    <em>
-                    Reduced query resolution times by grouping data in the
-                    long-term cache by month (we now use less than 1/2 of space
-                    and memory)
-                    </em>
-                </li>
-                </ul>
-                <p id="02047012-51e1-41dc-b8e6-38f51b43ed8a" className="">
-                <em>
-                    <strong>Improved consistency:</strong>
-                </em>
-                </p>
-                <ul
-                id="77411c21-d604-4c0e-9bbb-19c8a99e1abf"
-                className="bulleted-list"
-                >
-                <li style={{ listStyleType: 'disc' }}>
-                    <em>
-                    introduced option to return less pricing data (only average
-                    price or full average + open/high/low/close)
-                    </em>
-                </li>
-                </ul>
-                <ul
-                id="05876510-8eab-4000-8915-0d6e11f131da"
-                className="bulleted-list"
-                >
-                <li style={{ listStyleType: 'disc' }}>
-                    <em>
-                    standardised query parameters across all endpoints (e.g.
-                    using timestamps everywhere instead of dates)
-                    </em>
-                </li>
-                </ul>
-            </SectionHeaderWithDescription>
-            <SectionHeaderWithDescription title="Introduction">
-                <HStack>
-                    <Text>
-                    Welcome! Here we discuss how our API works and how can you
-                    integrate it into your application to access all our DeFi data.
-                    If you want a general overview of SimpleFi, you can check out{' '}
-                    <a href="https://medium.com/simplefi/maams-and-sers-we-give-you-simplefi-v2-82ead394d4b6">
-                        this link
-                    </a>
-                    , and if you want to learn more about how you can integrate with
-                    Simplefi’s Subgraphs,{' '}
-                    <a href="https://docs.simplefi.finance/subgraph-development-documentation/dashboard-integration">
-                        click here.
-                    </a>
-                    </Text>
-                </HStack>
-            </SectionHeaderWithDescription>
-            <SectionHeaderWithDescription title="Getting Started">
-                <SubSectionWithText title="Authentication">
-                        
-                        <HStack>
-                            <Text>The use of our API requires authentication through and Api-key, which for the time being is free. To create your own personal key, complete our online form <a href="https://docs.google.com/forms/d/e/1FAIpQLScIi27XTe8jMQ5iSlbuomaH62c4WOSwxZTNa10FbYZ2CtSgwQ/viewform">
-                                here.   
-                            </a></Text> 
-                            
-                        </HStack>
-                        <Text>
-                        Once you&apos;ve obtained an Api-key, you must attach it to the headers of each request under the header
-                        </Text>
-                        <code>
-                            <strong>Authorization</strong>
-                        </code>
-                        <pre id="a5a00bc8-a96e-4ca0-8eb3-189e5f87a100" className="code">
-                        {/* <code>fetch(url, {headers: { Authorization: Bearer &lt;my-api-key&gt;}})</code> */}
-                        </pre>
-                </SubSectionWithText>
-                <SubSectionWithText title="Rate Limiting"> 
-                    <Text>
-                        Each Api-key has a personal usage of 100,000 requests a month.
-                    </Text>
-                </SubSectionWithText>
-                <SubSectionWithText title="Errors"> 
-                        <Container width="container.md">
-                            <Table variant='simple'  size="lg" bg="inherit" width="100%" p={0}>
-                                <Thead>
-                                    <Tr>
-                                        <Th>Error Code</Th>
-                                        <Th>Code Definition</Th>
-                                    </Tr>
-                                </Thead>
-                                <Tbody>
-                                    {errorsData.map((error) => (
-                                        <Tr key={error.code}>
-                                            <Td>{error.code}</Td>
-                                            <Td>{error.message}</Td>
-                                        </Tr>
-                                    ))}
-                                </Tbody>
-                            </Table>
-                        </Container>
-                </SubSectionWithText>
-            </SectionHeaderWithDescription>
+        {
+            Object.entries(text).map(([key, value]) => {
+                return (
+                    <SectionHeaderWithDescription title={key} key={key.replace(' ', '-')}>
+                        {"paragraphs" in value && generateParagraph(value.paragraphs, key)}
+                        {"services" in  value && value.services.map((service: any) => (<Text key={Object.keys(service)[0]}>{Object.keys(service)[0]}</Text>))}
+                    </SectionHeaderWithDescription>
+                )
+            })
+        }
             <SectionHeaderWithDescription title="Core Services">
                 <SubSectionWithText title="Pricing Data">
                     <Text pb={1}>

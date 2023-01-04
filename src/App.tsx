@@ -18,14 +18,14 @@ function App() {
           onToggle={onToggle}
           onClose={onClose}
         />
-        <Main>
+        <Main w={useBreakpointValue({base: '100vw', md: '100%'})} p={0}>
           <Router/>
+        </Main>
           {!isDesktop && 
             <Slide direction='right' in={isOpen} style={{ zIndex: 10, top: '60px', left: isOpen ? '0px' : '20px', background: '#000c2d'}} >
               <Sidebar/>
             </Slide>
           }
-        </Main>
     </Flex>
   );
 }

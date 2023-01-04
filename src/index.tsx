@@ -30,7 +30,7 @@ export const theme = extendTheme(
   },
   proTheme,
 )
-console.log(theme);
+
 
 root.render(
   <React.StrictMode>
