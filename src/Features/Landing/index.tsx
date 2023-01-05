@@ -10,6 +10,7 @@ import {
     HStack,
     Image,
     Img,
+    SimpleGrid,
     Spacer,
     Stack,
     Text,
@@ -18,10 +19,30 @@ import {
 import { Socials } from "../../Components";
 import BelugaGif from "../../Assets/video/NFT4.gif";
 import { useNavigate } from "react-router-dom";
+import { Newsletter } from "../../Components/Newsletter";
 
 export const Landing = () => {
     const isDesktop = useBreakpointValue({ base: false, lg: true });
     const navigate = useNavigate();
+
+    const trustedBy = [
+        {
+            name: "Figment",
+            img: require('../../Assets/img/partners/figment.png')
+        },
+        {
+            name: "TheGraph",
+            img: require('../../Assets/img/partners/graph.png')
+        },
+        {
+            name: "NEAR",
+            img: require('../../Assets/img/partners/near.png')
+        },
+        {
+            name: "Stake Capital",
+            img: require('../../Assets/img/partners/stake.png')
+        }
+    ]
     return (
         <Box as="section" bg="inherit" px={2}>
             <Box 
@@ -97,6 +118,7 @@ export const Landing = () => {
                 <Card 
                     bgGradient="linear(to-br, #fcfcff 0,#edeeff 49.99%,#edeeff 60%)" 
                     p={{ base: '2', md: '10' }} 
+                    borderRadius={useBreakpointValue({ base: 'lg', sm: 'xs', md: "md" })}
                     paddingX={{ base: '4', md: '8', lg: '10'}}
                     height="full"
                 >
@@ -150,7 +172,7 @@ export const Landing = () => {
                     </Card>
                 </Card>
             </Box>
-            <Box position="relative" width={{ lg: '80%', sm: '100%', md: '90%' }} margin="auto">
+            <Box position="relative" width={{ lg: '80%', sm: '100%', md: '90%' }} margin="auto" mb={4}>
                 <Card 
                     bg="transparent" 
                     p={{ base: '0', md: '10' }} 
@@ -210,6 +232,26 @@ export const Landing = () => {
                             </Button>
                         </Stack>
                 </Card>
+            </Box>
+            <Box position="relative" width={{ lg: '80%', sm: '100%', md: '80%', base: '100%' }} margin="auto" mb={4}>
+                <Heading  as='h2' size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm'})} py={{ base: '2', md: '4' }}>Trusted By</Heading>
+                <SimpleGrid columns={useBreakpointValue({base: 2, sm: 2, xs: 2, md: 2, lg: 4})} spacing={2}>
+                        {trustedBy.map(el=> (
+                            <Image
+                                key={el.name}
+                                src={el.img}
+                                alt={el.name}
+                                objectFit="contain"
+                                margin="auto"
+                                bg="white"
+                                borderRadius="xl"
+                                marginBottom={4}
+                            />
+                        ))}
+                </SimpleGrid>
+            </Box>
+            <Box position="relative" width={{ lg: '80%', sm: '100%', md: '80%', base: '100%' }} margin="auto">
+                <Newsletter />
             </Box>
         </Box>
     )
