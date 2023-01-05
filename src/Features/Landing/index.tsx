@@ -67,7 +67,7 @@ export const Landing = () => {
         <Box as="section" bg="inherit" px={2}>
             <Box 
             position="relative" 
-            height="calc(100vh - 82px)"
+            minH="calc(100vh - 82px)"
             width={{ lg: '80%', sm: '100%' }} 
             margin="auto"
             justifyContent="center"
@@ -91,27 +91,7 @@ export const Landing = () => {
                                 Make smarter DeFi investments with our powerful data analytics
                             </Text>
                         </Stack>
-                        <Stack direction={{ base: 'column', md: 'row' }} spacing="3">
-                            <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')}>
-                                Use our API
-                            </Button>
-                            <Button variant="secondary" size={useBreakpointValue({ base: 'md', md: 'lg' })} isDisabled>
-                                Launch App
-                            </Button>
-                        </Stack>
-                        <Socials size="xl"/>
-                    </Stack>
-                    <Box
-                        // pos={{ lg: 'absolute' }}
-                        right="0"
-                        top="0"
-                        w={{ base: 'full', md: '100%', lg: '50%' }}
-                        sx={{
-                            clipPath: { lg: 'polygon(7% 0%, 100% 0%, 100% 100%, 0% 100%)' },
-                        }}
-                    > 
-                    {!isDesktop 
-                        ?
+                        {!isDesktop && (
                             <Img
                                 // boxSize="full"
                                 objectFit="contain"
@@ -120,7 +100,27 @@ export const Landing = () => {
                                 src={BelugaGif}
                                 alt="simplefi beluga"
                             />
-                        :
+                        )}
+                        <Stack direction={{ base: 'column', md: 'row' }} spacing="3">
+                            <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')}>
+                                Use our API
+                            </Button>
+                            <Button variant="secondary" size={useBreakpointValue({ base: 'md', md: 'lg' })} isDisabled>
+                                Launch App
+                            </Button>
+                        </Stack>
+                        {isDesktop && <Socials size="xl"/>} 
+                    </Stack>
+                    {isDesktop && 
+                        <Box
+                            // pos={{ lg: 'absolute' }}
+                            right="0"
+                            top="0"
+                            w={{ base: 'full', md: '100%', lg: '50%' }}
+                            sx={{
+                                clipPath: { lg: 'polygon(7% 0%, 100% 0%, 100% 100%, 0% 100%)' },
+                            }}
+                        > 
                             <video style={{
                                 width: '100%',
                                 height: '60%',
@@ -129,12 +129,11 @@ export const Landing = () => {
                             }} autoPlay loop muted>
                                 <source src={require('../../Assets/video/NFT4.mp4')} type="video/mp4" />
                             </video>
+                        </Box>
                     }
-                        
-                    </Box>
                 </Stack>
             </Box>
-            <Box position="relative" width={{ lg: '80%', sm: '100%', md: '80%', base: '100%' }} height="100vh" margin="auto">
+            <Box position="relative" width={{ lg: '80%', sm: '100%', md: '80%', base: '100%' }} minH={useBreakpointValue({default: '100vh', sm: '100vh', md: 'min-content', lg: 'min-content'})} margin="auto">
                 <Card 
                     bgGradient="linear(to-br, #fcfcff 0,#edeeff 49.99%,#edeeff 60%)" 
                     p={{ base: '2', md: '10' }} 
@@ -192,7 +191,7 @@ export const Landing = () => {
                     </Card>
                 </Card>
             </Box>
-            <Box position="relative" width={{ lg: '80%', sm: '100%', md: '90%' }} height="100vh"  margin="auto" mb={4}>
+            <Box position="relative" width={{ lg: '80%', sm: '100%', md: '90%' }} minH={useBreakpointValue({default: '100vh', sm: '100vh', md: 'min-content', lg: 'min-content'})}  margin="auto" mb={4}>
                 <Card 
                     bg="transparent" 
                     p={{ base: '0', md: '10' }} 
