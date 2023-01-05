@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
     Box,
     Button,
     Card,
     CardBody,
     CardHeader,
-    Container,
     Heading,
     HStack,
     Image,
@@ -18,7 +17,7 @@ import {
 } from '@chakra-ui/react'
 import { Socials } from "../../Components";
 import BelugaGif from "../../Assets/video/NFT4.gif";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Newsletter } from "../../Components/Newsletter";
 
 export const Landing = () => {
@@ -42,79 +41,100 @@ export const Landing = () => {
             name: "Stake Capital",
             img: require('../../Assets/img/partners/stake.png')
         }
-    ]
+    ];
+
+    const [hasScrolled, setHasScrolled] = useState(false);
+    const faqSectionRef = useRef(null) as any;
+    const { hash } = useLocation();
+
+    useEffect(() => {
+        if (faqSectionRef.current && hash === "#subscribe" && !hasScrolled) {
+            faqSectionRef.current.scrollIntoView({
+                behavior: "smooth",
+                inline:'center',
+                block: "center",
+            });
+            setHasScrolled(true);
+        }
+
+        return () => {
+            setHasScrolled(false);
+        };
+
+    }, [faqSectionRef, hash]);
+
     return (
         <Box as="section" bg="inherit" px={2}>
             <Box 
             position="relative" 
-            height={{ lg: '720px', base: '750px' }} 
-            width={{ lg: '80%', sm: '100%' }} margin="auto"
-            marginTop={{ lg: '0', base: '25%', md: '0' }}
-             justifyContent="center">
-                <Container py={{ base: '4', md: '8' }} height="full" paddingTop={0}>
-                    <Stack
-                        direction={{ base: 'column', lg: 'row' }}
-                        spacing={{ base: '16' }}
-                        align={{ md: 'center' }}
-                        height="full"
-                    >
-                        <Stack spacing={{ base: '8', md: '12' }}>
-                            <Stack spacing={{ base: '4', md: '6' }} maxW={{ md: 'xl', lg: 'md', xl: 'xl' }}>
-                                <HStack>
-                                    <Heading size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}>
-                                        DeFi made 
-                                    </Heading>
-                                    <Heading bgGradient='linear(to-r, #ab5fac 0%, #2665bd 40%)' bgClip='text' size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}>simple</Heading>
-                                </HStack>
-                                <Text fontSize={{ base: 'md', md: 'lg', sm: 'md' }} color="white">
-                                    Make smarter DeFi investments with our powerful data analytics
-                                </Text>
-                            </Stack>
-                            <Stack direction={{ base: 'column', md: 'row' }} spacing="3">
-                                <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')}>
-                                    Use our API
-                                </Button>
-                                <Button variant="secondary" size={useBreakpointValue({ base: 'md', md: 'lg' })} isDisabled>
-                                    Launch App
-                                </Button>
-                            </Stack>
-                            <Socials size="xl"/>
+            height="calc(100vh - 82px)"
+            width={{ lg: '80%', sm: '100%' }} 
+            margin="auto"
+            justifyContent="center"
+            display="flex"
+            >
+                <Stack
+                    direction={{ base: 'column', lg: 'row' }}
+                    spacing={{ base: '8' }}
+                    align={{ md: 'center' }}
+                    margin="auto"
+                >
+                    <Stack spacing={{ base: '8', md: '12' }}>
+                        <Stack spacing={{ base: '4', md: '6' }} maxW={{ md: 'xl', lg: 'md', xl: 'xl' }}>
+                            <HStack>
+                                <Heading size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}>
+                                    DeFi made 
+                                </Heading>
+                                <Heading bgGradient='linear(to-r, #ab5fac 0%, #2665bd 40%)' bgClip='text' size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}>simple</Heading>
+                            </HStack>
+                            <Text fontSize={{ base: 'md', md: 'lg', sm: 'md' }} color="white">
+                                Make smarter DeFi investments with our powerful data analytics
+                            </Text>
                         </Stack>
-                        <Box
-                            // pos={{ lg: 'absolute' }}
-                            right="0"
-                            top="0"
-                            w={{ base: 'full', md: '70%', lg: '50%' }}
-                            height={{ base: 'full', lg: 'full' }}
-                            sx={{
-                                clipPath: { lg: 'polygon(7% 0%, 100% 0%, 100% 100%, 0% 100%)' },
-                            }}
-                        > 
-                        {!isDesktop 
-                            ?
-                                <Img
-                                    // boxSize="full"
-                                    objectFit="contain"
-                                    width="100%"
-                                    src={BelugaGif}
-                                    alt="simplefi beluga"
-                                />
-                            :
-                                <video style={{
-                                    width: '100%',
-                                    height: '80%',
-                                    margin: 'auto',
-                                    objectFit: 'contain',
-                                }} autoPlay loop muted>
-                                    <source src={require('../../Assets/video/NFT4.mp4')} type="video/mp4" />
-                                </video>
-                        }
-                            
-                        </Box>
+                        <Stack direction={{ base: 'column', md: 'row' }} spacing="3">
+                            <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')}>
+                                Use our API
+                            </Button>
+                            <Button variant="secondary" size={useBreakpointValue({ base: 'md', md: 'lg' })} isDisabled>
+                                Launch App
+                            </Button>
+                        </Stack>
+                        <Socials size="xl"/>
                     </Stack>
-                </Container>
+                    <Box
+                        // pos={{ lg: 'absolute' }}
+                        right="0"
+                        top="0"
+                        w={{ base: 'full', md: '100%', lg: '50%' }}
+                        sx={{
+                            clipPath: { lg: 'polygon(7% 0%, 100% 0%, 100% 100%, 0% 100%)' },
+                        }}
+                    > 
+                    {!isDesktop 
+                        ?
+                            <Img
+                                // boxSize="full"
+                                objectFit="contain"
+                                width="100%"
+                                height="60%"
+                                src={BelugaGif}
+                                alt="simplefi beluga"
+                            />
+                        :
+                            <video style={{
+                                width: '100%',
+                                height: '60%',
+                                margin: 'auto',
+                                objectFit: 'contain',
+                            }} autoPlay loop muted>
+                                <source src={require('../../Assets/video/NFT4.mp4')} type="video/mp4" />
+                            </video>
+                    }
+                        
+                    </Box>
+                </Stack>
             </Box>
-            <Box position="relative" width={{ lg: '80%', sm: '100%', md: '80%', base: '100%' }} margin="auto">
+            <Box position="relative" width={{ lg: '80%', sm: '100%', md: '80%', base: '100%' }} height="100vh" margin="auto">
                 <Card 
                     bgGradient="linear(to-br, #fcfcff 0,#edeeff 49.99%,#edeeff 60%)" 
                     p={{ base: '2', md: '10' }} 
@@ -172,7 +192,7 @@ export const Landing = () => {
                     </Card>
                 </Card>
             </Box>
-            <Box position="relative" width={{ lg: '80%', sm: '100%', md: '90%' }} margin="auto" mb={4}>
+            <Box position="relative" width={{ lg: '80%', sm: '100%', md: '90%' }} height="100vh"  margin="auto" mb={4}>
                 <Card 
                     bg="transparent" 
                     p={{ base: '0', md: '10' }} 
@@ -250,7 +270,7 @@ export const Landing = () => {
                         ))}
                 </SimpleGrid>
             </Box>
-            <Box position="relative" width={{ lg: '80%', sm: '100%', md: '80%', base: '100%' }} margin="auto">
+            <Box position="relative" width={{ lg: '80%', sm: '100%', md: '80%', base: '100%' }} margin="auto" id="subscribe" ref={faqSectionRef}>
                 <Newsletter />
             </Box>
         </Box>

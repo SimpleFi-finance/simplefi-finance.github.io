@@ -65,7 +65,6 @@ export const MailchimpForm = ({
         Join Our Newsletter
       </Heading>
       <FormControl
-        pl={useBreakpointValue({ base: 1, xs: 0, sm: 0, md: 2, lg: 5 })}
         isInvalid={isError}
       >
         <FormLabel

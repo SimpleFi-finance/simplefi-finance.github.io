@@ -2,7 +2,11 @@ import React from 'react';
 import { ButtonGroup, IconButton } from '@chakra-ui/react';
 import { FaDiscord, FaGithub, FaMedium, FaTwitter} from "react-icons/fa";
 
-export const Socials = (props: {size: string}) => {
+interface IProps extends React.ComponentProps<"div"> {
+  size: string;
+}
+export const Socials = (props: IProps) => {
+  const {size, ...otherProps} = props;
   const socials = [
     {
       name: 'twitter',
@@ -27,7 +31,7 @@ export const Socials = (props: {size: string}) => {
   ]
 
   return (
-    <ButtonGroup variant="ghost" color="white" size={props.size || "lg"}>
+    <ButtonGroup variant="ghost" color="white" size={size || "lg"} {...otherProps}>
       {socials.map((social) => (
         <IconButton 
           key={social.name}
