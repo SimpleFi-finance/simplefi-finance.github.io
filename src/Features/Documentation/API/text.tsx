@@ -20,7 +20,7 @@ export const text = {
                     item: [
                         {
                             type: "text",
-                            item: "added new chains and protocols (and therefore new markets and tokens",
+                            item: "added new chains and protocols (and therefore new markets and tokens)",
                         }
                     ]
                 },
@@ -150,22 +150,22 @@ export const text = {
                             item: [
                                 {
                                     type: "text",
-                                    item: "‘base’ tokens (we may also describe these as ‘assets’ in the documentation and API responses): these are simple tokens such as Curve’s governance token. Base tokens don’t represent anything other than themselves.",
+                                    item: "`base` tokens (we may also describe these as `assets` in the documentation and API responses): these are simple tokens such as Curve`s governance token. Base tokens don`t represent anything other than themselves.",
                                 },
                                 {
                                     type: "text",
-                                    item: "‘positional’ tokens (we may also refer to these as ‘composed’ tokens, ‘output’ tokens, ‘receipt’ tokens or ‘markets’ in the documentation and API responses):"
+                                    item: "`positional` tokens (we may also refer to these as `composed` tokens, `output` tokens, `receipt` tokens or `markets` in the documentation and API responses):"
                                 },
                                 {
                                     type: "list",
                                     item: [
                                         {
                                             type: "text",
-                                            item: "these tokens represent a position in a &#x27;market’, which can be a liquidity pool, farm, lending pool, etc. The ‘positional’ token in a liquidity pool for example is what is generally called an LP token."
+                                            item: "these tokens represent a position in a `market`, which can be a liquidity pool, farm, lending pool, etc. The `positional` token in a liquidity pool for example is what is generally called an LP token."
                                         },
                                         {
                                             type: "text",
-                                            item: "queries for a positional token will also return the state of the underlying market’s reserves. For example, a query for pricing of a Sushiswap DEX LP token will return how much of each token of the underlying pair was held in reserve by the pool at the specified date(s).",
+                                            item: "queries for a positional token will also return the state of the underlying market`s reserves. For example, a query for pricing of a Sushiswap DEX LP token will return how much of each token of the underlying pair was held in reserve by the pool at the specified date(s).",
                                         }
                                     ]
                                 }
@@ -200,11 +200,11 @@ export const text = {
                                 },
                                 {
                                     type: "text",
-                                    item: "You want to see the evolution of a pool’s LP token price over time.",
+                                    item: "You want to see the evolution of a pool`s LP token price over time.",
                                 },
                                 {
                                     type: "text",
-                                    item: "You want to see how a pool’s reserves have evolved over time."
+                                    item: "You want to see how a pool`s reserves have evolved over time."
                                 }
                             ]
                         }
@@ -233,13 +233,13 @@ export const text = {
                         },
                         {
                             type: "text",
-                            item: "Every component within an Organisation has a separate ProtocolId, which is chain specific. For example, each deployment of the Sushiswap DEX on different chains will have its own protocolId. Also, DEXes and their associated farms are generally considered as separate protocols (and therefore for have different protocolId’s)."
+                            item: "Every component within an Organisation has a separate ProtocolId, which is chain specific. For example, each deployment of the Sushiswap DEX on different chains will have its own protocolId. Also, DEXes and their associated farms are generally considered as separate protocols (and therefore for have different protocolId`s)."
                         },
                         {
                             type: "component",
                             item: <Text pb={1}>Subgraphs are the primary source of onchain data we use for our
                             APIs. These may be subgraphs developed by SimpleFi or by
-                            partners such as Messari. If you’d like your subgraph to be
+                            partners such as Messari. If you`d like your subgraph to be
                             considered for inclusion, please{' '}
                             <a 
                                 style={{fontWeight: "bold", color: "#D53F8C"}}
@@ -257,7 +257,7 @@ export const text = {
                             item: [
                                 {
                                     type: "text",
-                                    item: "You require more information on a specific protocol, such as which chain it’s deployed on, its factory address, etc."
+                                    item: "You require more information on a specific protocol, such as which chain it`s deployed on, its factory address, etc."
                                 },
                                 {
                                     type: "text",
@@ -265,7 +265,7 @@ export const text = {
                                 },
                                 {
                                     type: "text",
-                                    item: "You’d like to know all the farms that a given LP token can be staked in. Or all the liquidity pools that a base token can be deposited in."
+                                    item: "You`d like to know all the farms that a given LP token can be staked in. Or all the liquidity pools that a base token can be deposited in."
                                 },
                                 {
                                     type: "text",
