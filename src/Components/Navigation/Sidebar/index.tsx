@@ -9,6 +9,9 @@ import {
   FiHome,
   FiUsers,
 } from 'react-icons/fi'
+import {
+    HiOutlineNewspaper
+} from 'react-icons/hi'
 import { TbApi } from "react-icons/tb";
 import { NavButton } from './NavButton'
 import {useNavigate, useLocation} from "react-router-dom";
@@ -31,7 +34,7 @@ export const Sidebar = () => {
                 <NavButton onClick={() => navigate('/careers')} label="Careers" icon={FiUsers} isActive={pathname === '/careers'} />
                 <NavButton onClick={() => navigate('/api/documentation')} label="API docs" icon={TbApi} isActive={pathname === '/api/documentation'}/>
                 <NavButton onClick={() => window.open("https://subgraphs.docs.simplefi.finance/subgraph-development-documentation/dashboard-integration", "_blank")} label="Subgraphs Docs" icon={GrGraphQl} isActive={pathname === '/subgraphs/documentation'}/>
-                <NavButton onClick={() => navigate('/#newsletter')} label="Newsletter" icon={TbApi}/>
+                <NavButton onClick={() => navigate('/#newsletter')} label="Newsletter" icon={HiOutlineNewspaper}/>
             </Stack>
         </Flex>
     )
