@@ -92,14 +92,22 @@ export const Landing = () => {
                             </Text>
                         </Stack>
                         {!isDesktop && (
-                            <Img
-                                // boxSize="full"
-                                objectFit="contain"
-                                width="100%"
-                                height="60%"
-                                src={BelugaGif}
-                                alt="simplefi beluga"
-                            />
+                            <Box
+                            // pos={{ lg: 'absolute' }}
+                                right="0"
+                                top="0"
+                                w={{ base: 'full', md: '100%', lg: '60%' }}
+
+                            > 
+                                <video style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    margin: 'auto',
+                                    objectFit: 'contain',
+                                }} autoPlay loop muted>
+                                    <source src={require('../../Assets/video/NFT4.webm')} type="video/webm" />
+                                </video>
+                            </Box>
                         )}
                         <Stack direction={{ base: 'column', md: 'row' }} spacing="3">
                             <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')}>
@@ -127,7 +135,7 @@ export const Landing = () => {
                                 margin: 'auto',
                                 objectFit: 'contain',
                             }} autoPlay loop muted>
-                                <source src={require('../../Assets/video/NFT4.mp4')} type="video/mp4" />
+                                <source src={require('../../Assets/video/NFT4.webm')} type="video/webm" />
                             </video>
                         </Box>
                     }
@@ -150,9 +158,10 @@ export const Landing = () => {
                     <Card direction={useBreakpointValue({ md: 'row', sm: 'column'})} bg="transparent" border="none" boxShadow="none" justify="space-evenly" align="flex-start">
                         <Card bg="transparent" border="none" boxShadow="none" p={useBreakpointValue({ base: '2', md: '4' })} justify="center" width={useBreakpointValue({base: '100%', md: '45%'})}>
                             <Image 
-                                src={require('../../Assets/img/dashboard_1.png')}
+                                src={require('../../Assets/img/dashboard_1.webp')}
                                 objectFit="contain"
                                 margin="auto"
+                                alt="dashboard_1"
                                 bg="white"
                                 borderRadius="md"
                                 padding={2}
@@ -172,8 +181,9 @@ export const Landing = () => {
                         <Card bg="transparent" border="none" boxShadow="none" p={useBreakpointValue({ base: '2', md: '4' })} justify="center" width={useBreakpointValue({base: '100%', md: '45%'})}>
                             <Image 
                                 margin="auto"
-                                src={require('../../Assets/img/dashboard_2.png')}
+                                src={require('../../Assets/img/dashboard_2.webp')}
                                 objectFit="contain"
+                                alt="dashboard_2"
                                 bg="white"
                                 padding={2}
                                 marginBottom={4}

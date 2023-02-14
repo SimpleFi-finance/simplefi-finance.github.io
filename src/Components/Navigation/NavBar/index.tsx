@@ -5,11 +5,9 @@ import {
     ButtonGroup,
     Container,
     Flex,
-    IconButton,
     Spacer,
     useBreakpointValue,
   } from '@chakra-ui/react'
-  import { FiMenu } from 'react-icons/fi'
   import { Logo } from '../../Logo';
   import {useNavigate, useLocation} from "react-router-dom";
 import { ToggleButton } from '../ToggleButton';
