@@ -19,6 +19,7 @@ import { Socials } from "../../Components";
 import BelugaGif from "../../Assets/video/NFT4.gif";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Newsletter } from "../../Components/Newsletter";
+import Typewriter from 'typewriter-effect';
 
 export const Landing = () => {
     const isDesktop = useBreakpointValue({ base: false, lg: true });
@@ -81,14 +82,16 @@ export const Landing = () => {
                 >
                     <Stack spacing={{ base: '8', md: '12' }}>
                         <Stack spacing={{ base: '4', md: '6' }} maxW={{ md: 'xl', lg: 'md', xl: 'xl' }}>
-                            <HStack>
-                                <Heading size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}>
-                                    DeFi made 
+                            <Stack>
+                                <Heading bgGradient='linear(to-r, #ab5fac 0%, #2665bd 40%)' bgClip='text' size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}>
+                                    <Typewriter options={{strings: ["Open source", "Lightning Fast", "Multichain", "Lightweight"], autoStart: true, loop:true}} />
                                 </Heading>
-                                <Heading bgGradient='linear(to-r, #ab5fac 0%, #2665bd 40%)' bgClip='text' size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}>simple</Heading>
-                            </HStack>
+                                <Heading size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}>
+                                    DeFi data API
+                                </Heading>
+                            </Stack>
                             <Text fontSize={{ base: 'md', md: 'lg', sm: 'md' }} color="white">
-                                Make smarter DeFi investments with our powerful data analytics
+                                Something about amazing analytics - definitive endpoints. And if I continue writing what happens
                             </Text>
                         </Stack>
                         {!isDesktop && (
@@ -97,8 +100,7 @@ export const Landing = () => {
                                 right="0"
                                 top="0"
                                 w={{ base: 'full', md: '100%', lg: '60%' }}
-
-                            > 
+                            >
                                 <video style={{
                                     width: '100%',
                                     height: '100%',
@@ -112,9 +114,6 @@ export const Landing = () => {
                         <Stack direction={{ base: 'column', md: 'row' }} spacing="3">
                             <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')}>
                                 Use our API
-                            </Button>
-                            <Button variant="secondary" size={useBreakpointValue({ base: 'md', md: 'lg' })} isDisabled>
-                                Launch App
                             </Button>
                         </Stack>
                         {isDesktop && <Socials size="xl"/>} 
