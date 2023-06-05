@@ -84,14 +84,14 @@ export const Landing = () => {
                         <Stack spacing={{ base: '4', md: '6' }} maxW={{ md: 'xl', lg: 'md', xl: 'xl' }}>
                             <Stack>
                                 <Heading bgGradient='linear(to-r, #ab5fac 0%, #2665bd 40%)' bgClip='text' size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}>
-                                    <Typewriter options={{strings: ["Open source", "Lightning Fast", "Multichain", "Lightweight"], autoStart: true, loop:true}} />
+                                    <Typewriter options={{strings: ["Open source", "Lightning Fast", "Multichain", "Lightweight", "Orgasmic"], autoStart: true, loop:true}} />
                                 </Heading>
                                 <Heading size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}>
-                                    DeFi data API
+                                    DeFi data analytics
                                 </Heading>
                             </Stack>
                             <Text fontSize={{ base: 'md', md: 'lg', sm: 'md' }} color="white">
-                                Something about amazing analytics - definitive endpoints. And if I continue writing what happens
+                                Join DeFi&apos;s open data revolution: query our unified API, or run your own high-performance analytics engine for free.
                             </Text>
                         </Stack>
                         {!isDesktop && (
@@ -113,7 +113,10 @@ export const Landing = () => {
                         )}
                         <Stack direction={{ base: 'column', md: 'row' }} spacing="3">
                             <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')}>
-                                Use our API
+                                Use the API
+                            </Button>
+                            <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')}>
+                                Run your own
                             </Button>
                         </Stack>
                         {isDesktop && <Socials size="xl"/>} 
