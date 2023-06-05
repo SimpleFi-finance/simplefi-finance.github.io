@@ -62,7 +62,7 @@ export const MailchimpForm = ({
         py={{ base: '2', md: '4' }}
         mb={5}
       >
-        Join Our Newsletter
+        Get our newsletter
       </Heading>
       <FormControl
         isInvalid={isError}
@@ -76,7 +76,7 @@ export const MailchimpForm = ({
             lg: 'lg',
           })}
         >
-          Email address
+          Stay updated on our product launches and network updates
         </FormLabel>
         <Input
           type="email"
