@@ -31,16 +31,16 @@ export const Landing = () => {
             img: require('../../Assets/img/partners/figment.png')
         },
         {
-            name: "TheGraph",
-            img: require('../../Assets/img/partners/graph.png')
-        },
-        {
             name: "NEAR",
             img: require('../../Assets/img/partners/near.png')
         },
         {
             name: "Stake Capital",
             img: require('../../Assets/img/partners/stake.png')
+        },
+        {
+            name: "Daedalus",
+            img: require('../../Assets/img/partners/daedalus.png')
         }
     ];
 
@@ -262,7 +262,7 @@ export const Landing = () => {
                 </Card>
             </Box>
             <Box position="relative" width={{ lg: '80%', sm: '100%', md: '80%', base: '100%' }} margin="auto" mb={4}>
-                <Heading  as='h2' size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm'})} py={{ base: '2', md: '4' }}>Trusted By</Heading>
+                <Heading  as='h2' size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm'})} py={{ base: '2', md: '4' }}>Trusted by</Heading>
                 <SimpleGrid columns={useBreakpointValue({base: 2, sm: 2, xs: 2, md: 2, lg: 4})} spacing={2}>
                         {trustedBy.map(el=> (
                             <Image
