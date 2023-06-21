@@ -91,7 +91,7 @@ export const Landing = () => {
                                 </Heading>
                             </Stack>
                             <Text fontSize={{ base: 'md', md: 'lg', sm: 'md' }} color="white">
-                                Join DeFi&apos;s open data revolution: query our unified API, or run your own high-performance analytics engine for free.
+                                Join DeFi&apos;s open data revolution. Get the most advanced analytics via our API or by running our open-source engine for free.
                             </Text>
                         </Stack>
                         {!isDesktop && (
@@ -113,10 +113,10 @@ export const Landing = () => {
                         )}
                         <Stack direction={{ base: 'column', md: 'row' }} spacing="3">
                             <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')}>
-                                Use the API
+                                Use our API
                             </Button>
                             <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')}>
-                                Run your own
+                                Run your engine
                             </Button>
                         </Stack>
                         {isDesktop && <Socials size="xl"/>} 
@@ -155,7 +155,7 @@ export const Landing = () => {
                         py={useBreakpointValue({ base: '6', md: '4' })}
                     >
                         <Heading as="h1" size={useBreakpointValue({ sm: 'xs', md: 'xs', base: 'xs' })} color="#bf1d82">Explore</Heading>
-                        <Heading  as='h2' size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm'})} py={{ base: '2', md: '4' }}>SimpleFi your data</Heading>
+                        <Heading  as='h2' size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm'})} py={{ base: '2', md: '4' }}>SimpleFi your data needs</Heading>
                     </CardHeader>
                     <Card direction={useBreakpointValue({ md: 'row', sm: 'column'})} bg="transparent" border="none" boxShadow="none" justify="space-evenly" align="flex-start">
                         <Card bg="transparent" border="none" boxShadow="none" p={useBreakpointValue({ base: '2', md: '4' })} justify="center" width={useBreakpointValue({base: '100%', md: '45%'})}>
@@ -176,7 +176,7 @@ export const Landing = () => {
                                     <span style={{ color:"#bf1d82"}}>Unified</span> API
                             </Heading>
                             <Text>
-                            Query our endpoints for comprehensive unified data on all DeFi categories, including Dexes, borrowing protocols, staking protocols, perp protocols, etc.
+                            Our API serves comparable, granular data such as pool-level ROI and account-level liquidation risk for all DeFi segments including AMMs, borrowing, staking & perp protocols.
                             </Text>
                         </Card>
                         {!isDesktop && <Spacer />}
@@ -197,7 +197,7 @@ export const Landing = () => {
                                     <span style={{ color:"#bf1d82"}}>Modular</span> engine
                             </Heading>
                             <Text>
-                            Self-host your data thanks to our powerful, modular engine. Easily choose which chains and protocols to index and analyze. Bootstrap your database in an instant.
+                            Run our engine to self-host the data for your DeFi app or investment bot. Simply choose which chains and protocols you want to cover and bootstrap your database in an instant.
                             </Text>
                         </Card>
                     </Card>
@@ -223,7 +223,7 @@ export const Landing = () => {
                         px={useBreakpointValue({ base: '2', md: '4' })}
                     >
                         <Text color="white" fontSize={useBreakpointValue({ sm: 'md', md: 'large', base: 'md' })} pb={2}>
-                            DeFi data should be accessible, uncensored and permissionless... <span style={{color: '#f636ad'}}>just like the protocols themselves.</span> SimpleFi is fully open source, and provides <span style={{color: '#f636ad'}}>DeFi analytics as a public good. </span>Join us!
+                            Access to DeFi data should be uncensored and permissionless... <span style={{color: '#f636ad'}}>just like DeFi protocols themselves.</span> SimpleFi is fully open source, and serves <span style={{color: '#f636ad'}}>DeFi analytics as a public good. </span> Join us!
                         </Text>
                         <Card direction={{ base: 'column', md: 'row', sm: 'column'}} bg="transparent" border="none" boxShadow="none" justify="space-between">
                             <Card bg="transparent" border="none" boxShadow="none" justify="center" width={useBreakpointValue({ sm: '100%', md: '45%', base: '100%' })} px={1}>
@@ -232,7 +232,7 @@ export const Landing = () => {
                                     size={useBreakpointValue({ sm: 'sm', md: 'xs', base: 'xs'})}
                                     paddingY={4}
                                     color="white"
-                                > Anyone can contribute
+                                > Help build SimpleFi
                                 </Heading>
                                 <Text fontSize={useBreakpointValue({ sm: 'md', md: 'large', base: 'md' })}  color="white">
                                 Our data and analytics pipelines are entirely coded in Rust. Visit our github and help us make the platform even more powerful.
@@ -246,10 +246,10 @@ export const Landing = () => {
                                     paddingY={4}
                                     color="white"
                                 > 
-                                    Decentralized network
+                                    Participate in the network
                                 </Heading>
                                 <Text fontSize={useBreakpointValue({ sm: 'md', md: 'large', base: 'md' })} color="white">
-                                    In the age of AI, giving up control to private companies is a bad idea. Help build the network that serves training data as a public good.
+                                    Don&apos;t let private companies control the era of AI. Help us build and run the decentralized network that serves our open DeFi data sets.
                                 </Text>
                             </Card>
                         </Card>
