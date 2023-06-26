@@ -117,7 +117,7 @@ export const Landing = () => {
                             <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')}>
                                 Use our API
                             </Button>
-                            <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')}>
+                            <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open('https://github.com/SimpleFi-finance/', '_blank')}>
                                 Run your engine
                             </Button>
                         </Stack>
@@ -267,7 +267,7 @@ export const Landing = () => {
                         </Card>
                     </CardBody>
                         <Stack direction={{ base: 'column', md: 'row' }} spacing={{ base: '3', md: '6' }} marginTop={5}>
-                            <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'md' })} onClick={() => navigate('/api/documentation')}>
+                            <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'md' })} onClick={() => window.open('https://github.com/SimpleFi-finance/', '_blank')}>
                                 Contribute now
                             </Button>
                         </Stack>
