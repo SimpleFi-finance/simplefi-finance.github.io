@@ -162,27 +162,28 @@ export const Landing = () => {
                     <Card direction={useBreakpointValue({ md: 'row', sm: 'column'})} bg="transparent" border="none" boxShadow="none" justify="space-evenly" align="center">
                         <Show above='md'>
                             <Image
-                                    src={require('../../Assets/img/temp.png')}
-                                    objectFit="contain"
+                                    src={require('../../Assets/img/illustrations/simplefi-universe-desktop.png')}
+                                    objectFit="scale-down"
                                     margin="auto"
-                                    alt="dashboard_1"
-                                    bg="white"
+                                    alt="simplefi_universe"
+                                    // uncomment to match website bg colour
+                                    // bg="#000c2d"
                                     borderRadius="md"
-                                    padding={2}
-                                    marginX={50}
+                                    paddingX={10}
                                     marginBottom={4}
-                                    width="100%"
+                                    width="90%"
                                 />
                         </Show>
                         <Hide above='md'>
                             <Image
-                                    src={require('../../Assets/img/dashboard_1.png')}
+                                    src={require('../../Assets/img/illustrations/simplefi-universe-mobile.png')}
                                     objectFit="contain"
                                     margin="auto"
-                                    alt="dashboard_1"
-                                    bg="white"
+                                    alt="simplefi_universe"
+                                    // uncomment to match website bg colour
+                                    // bg="#000c2d"
                                     borderRadius="md"
-                                    padding={2}
+                                    padding={0}
                                     marginX={50}
                                     marginBottom={4}
                                     width="100%"
@@ -191,17 +192,6 @@ export const Landing = () => {
                     </Card>
                     <Card direction={useBreakpointValue({ md: 'row', sm: 'column'})} bg="transparent" border="none" boxShadow="none" justify="space-evenly" align="flex-start">
                         <Card bg="transparent" border="none" boxShadow="none" p={useBreakpointValue({ base: '2', md: '4' })} justify="center" width={useBreakpointValue({base: '100%', md: '45%'})}>
-                            {/* <Image 
-                                src={require('../../Assets/img/dashboard_1.webp')}
-                                objectFit="contain"
-                                margin="auto"
-                                alt="dashboard_1"
-                                bg="white"
-                                borderRadius="md"
-                                padding={2}
-                                marginBottom={4}
-                                width="100%"
-                            /> */}
                             <Heading 
                                 size={useBreakpointValue({ base: 'xs', md: 'xs', lg: 'md' })}
                                 paddingY={4}>
@@ -213,16 +203,6 @@ export const Landing = () => {
                         </Card>
                         {!isDesktop && <Spacer />}
                         <Card bg="transparent" border="none" boxShadow="none" p={useBreakpointValue({ base: '2', md: '4' })} justify="center" width={useBreakpointValue({base: '100%', md: '45%'})}>
-                            {/* <Image 
-                                margin="auto"
-                                src={require('../../Assets/img/dashboard_2.webp')}
-                                objectFit="contain"
-                                alt="dashboard_2"
-                                bg="white"
-                                padding={2}
-                                marginBottom={4}
-                                borderRadius="md"
-                            /> */}
                             <Heading 
                                 size={useBreakpointValue({ base: 'xs', md: 'xs', lg: 'md' })}
                                 paddingY={4}>
