@@ -61,16 +61,6 @@ export interface INavBarProps {
                       }}
                     >API Documentation</Button>
                     <Button 
-                      onClick={() => window.open("https://subgraphs.docs.simplefi.finance/subgraph-development-documentation/dashboard-integration", "_blank")}
-                      isActive={location.pathname === '/subgraphs/documentation'} 
-                      _active={{
-                        bg: 'transparent',
-                        borderBottom: '2px solid',
-                        borderRadius: '0px',
-                        transition: 'all 0.2s ease-in-out',
-                      }}
-                    >Subgraphs Documentation</Button>
-                    <Button 
                       onClick={() => navigate('/#subscribe')} 
                       _active={{
                         bg: 'transparent',

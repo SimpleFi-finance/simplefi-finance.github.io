@@ -6,9 +6,11 @@ import {
     CardBody,
     CardHeader,
     Heading,
+    Hide,
     HStack,
     Image,
     Img,
+    Show,
     SimpleGrid,
     Spacer,
     Stack,
@@ -19,6 +21,7 @@ import { Socials } from "../../Components";
 import BelugaGif from "../../Assets/video/NFT4.gif";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Newsletter } from "../../Components/Newsletter";
+import Typewriter from 'typewriter-effect';
 
 export const Landing = () => {
     const isDesktop = useBreakpointValue({ base: false, lg: true });
@@ -30,16 +33,16 @@ export const Landing = () => {
             img: require('../../Assets/img/partners/figment.png')
         },
         {
-            name: "TheGraph",
-            img: require('../../Assets/img/partners/graph.png')
-        },
-        {
             name: "NEAR",
             img: require('../../Assets/img/partners/near.png')
         },
         {
             name: "Stake Capital",
             img: require('../../Assets/img/partners/stake.png')
+        },
+        {
+            name: "Daedalus",
+            img: require('../../Assets/img/partners/daedalus.png')
         }
     ];
 
@@ -81,14 +84,16 @@ export const Landing = () => {
                 >
                     <Stack spacing={{ base: '8', md: '12' }}>
                         <Stack spacing={{ base: '4', md: '6' }} maxW={{ md: 'xl', lg: 'md', xl: 'xl' }}>
-                            <HStack>
-                                <Heading size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}>
-                                    DeFi made 
+                            <Stack>
+                                <Heading bgGradient='linear(to-r, #ab5fac 0%, #2665bd 40%)' bgClip='text' size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}>
+                                    <Typewriter options={{strings: ["Open source", "Lightning Fast", "Multichain", "Lightweight", "Orgasmic"], autoStart: true, loop:true}} />
                                 </Heading>
-                                <Heading bgGradient='linear(to-r, #ab5fac 0%, #2665bd 40%)' bgClip='text' size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}>simple</Heading>
-                            </HStack>
+                                <Heading size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}>
+                                    DeFi data analytics
+                                </Heading>
+                            </Stack>
                             <Text fontSize={{ base: 'md', md: 'lg', sm: 'md' }} color="white">
-                                Make smarter DeFi investments with our powerful data analytics
+                                Join DeFi&apos;s open data revolution. Get the most advanced analytics via our API or by running our open-source engine for free.
                             </Text>
                         </Stack>
                         {!isDesktop && (
@@ -97,8 +102,7 @@ export const Landing = () => {
                                 right="0"
                                 top="0"
                                 w={{ base: 'full', md: '100%', lg: '60%' }}
-
-                            > 
+                            >
                                 <video style={{
                                     width: '100%',
                                     height: '100%',
@@ -113,8 +117,8 @@ export const Landing = () => {
                             <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')}>
                                 Use our API
                             </Button>
-                            <Button variant="secondary" size={useBreakpointValue({ base: 'md', md: 'lg' })} isDisabled>
-                                Launch App
+                            <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open('https://github.com/SimpleFi-finance/', '_blank')}>
+                                Run your engine
                             </Button>
                         </Stack>
                         {isDesktop && <Socials size="xl"/>} 
@@ -152,50 +156,60 @@ export const Landing = () => {
                     <CardHeader
                         py={useBreakpointValue({ base: '6', md: '4' })}
                     >
-                        <Heading as="h1" size={useBreakpointValue({ sm: 'xs', md: 'xs', base: 'xs' })} color="#bf1d82">Dashboard</Heading>
-                        <Heading  as='h2' size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm'})} py={{ base: '2', md: '4' }}>Actionable data</Heading>
+                        <Heading as="h1" size={useBreakpointValue({ sm: 'xs', md: 'xs', base: 'xs' })} color="#bf1d82">Explore</Heading>
+                        <Heading  as='h2' size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm'})} py={{ base: '2', md: '4' }}>SimpleFi your data needs</Heading>
                     </CardHeader>
+                    <Card direction={useBreakpointValue({ md: 'row', sm: 'column'})} bg="transparent" border="none" boxShadow="none" justify="space-evenly" align="center">
+                        <Show above='md'>
+                            <Image
+                                    src={require('../../Assets/img/illustrations/simplefi-universe-desktop.png')}
+                                    objectFit="scale-down"
+                                    margin="auto"
+                                    alt="simplefi_universe"
+                                    // uncomment to match website bg colour
+                                    // bg="#000c2d"
+                                    borderRadius="md"
+                                    paddingX={10}
+                                    marginBottom={4}
+                                    width="90%"
+                                />
+                        </Show>
+                        <Hide above='md'>
+                            <Image
+                                    src={require('../../Assets/img/illustrations/simplefi-universe-mobile.png')}
+                                    objectFit="contain"
+                                    margin="auto"
+                                    alt="simplefi_universe"
+                                    // uncomment to match website bg colour
+                                    // bg="#000c2d"
+                                    borderRadius="md"
+                                    padding={0}
+                                    marginX={50}
+                                    marginBottom={4}
+                                    width="100%"
+                                />
+                        </Hide>
+                    </Card>
                     <Card direction={useBreakpointValue({ md: 'row', sm: 'column'})} bg="transparent" border="none" boxShadow="none" justify="space-evenly" align="flex-start">
                         <Card bg="transparent" border="none" boxShadow="none" p={useBreakpointValue({ base: '2', md: '4' })} justify="center" width={useBreakpointValue({base: '100%', md: '45%'})}>
-                            <Image 
-                                src={require('../../Assets/img/dashboard_1.webp')}
-                                objectFit="contain"
-                                margin="auto"
-                                alt="dashboard_1"
-                                bg="white"
-                                borderRadius="md"
-                                padding={2}
-                                marginBottom={4}
-                                width="100%"
-                            />
                             <Heading 
                                 size={useBreakpointValue({ base: 'xs', md: 'xs', lg: 'md' })}
                                 paddingY={4}>
-                                    <span style={{ color:"#bf1d82"}}>Track</span> your ROI
+                                    <span style={{ color:"#bf1d82"}}>Unified</span> API
                             </Heading>
                             <Text>
-                            Instantly see the profits (or losses) from all your investments in DeFi liquidity pools, yield farms, lending pools and more.
+                            Our API serves comparable, granular data such as pool-level ROI and account-level liquidation risk for all DeFi segments including AMMs, borrowing, staking & perp protocols.
                             </Text>
                         </Card>
                         {!isDesktop && <Spacer />}
                         <Card bg="transparent" border="none" boxShadow="none" p={useBreakpointValue({ base: '2', md: '4' })} justify="center" width={useBreakpointValue({base: '100%', md: '45%'})}>
-                            <Image 
-                                margin="auto"
-                                src={require('../../Assets/img/dashboard_2.webp')}
-                                objectFit="contain"
-                                alt="dashboard_2"
-                                bg="white"
-                                padding={2}
-                                marginBottom={4}
-                                borderRadius="md"
-                            />
                             <Heading 
                                 size={useBreakpointValue({ base: 'xs', md: 'xs', lg: 'md' })}
                                 paddingY={4}>
-                                    <span style={{ color:"#bf1d82"}}>Boost</span> your Portfolio
+                                    <span style={{ color:"#bf1d82"}}>Modular</span> engine
                             </Heading>
                             <Text>
-                            Discover ways to increase your returns and find new investment opportunities thanks to our yield optimization tools.
+                            Run our engine to self-host the data for your DeFi app or investment bot. Simply choose which chains and protocols you want to cover and bootstrap your database in an instant.
                             </Text>
                         </Card>
                     </Card>
@@ -214,14 +228,14 @@ export const Landing = () => {
                         px={useBreakpointValue({ base: '2', md: '4' })}
                         pb={1}
                     >
-                        <Heading as="h1" size={useBreakpointValue({ sm: 'xs', md: 'xs', base: 'xs' })} color="#bf1d82">Api</Heading>
-                        <Heading as="h2" size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'xs'})} py={{ base: '2', md: '4' }} color="white">Multichain data API</Heading>
+                        <Heading as="h1" size={useBreakpointValue({ sm: 'xs', md: 'xs', base: 'xs' })} color="#bf1d82">Contribute</Heading>
+                        <Heading as="h2" size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'xs'})} py={{ base: '2', md: '4' }} color="white">Join the open data revolution</Heading>
                     </CardHeader>
                     <CardBody
                         px={useBreakpointValue({ base: '2', md: '4' })}
                     >
                         <Text color="white" fontSize={useBreakpointValue({ sm: 'md', md: 'large', base: 'md' })} pb={2}>
-                            Our API covers <span style={{color: '#f636ad'}}>10</span> chains and serves <span style={{color: '#f636ad'}}>1,578,345,954</span> DeFi data points including pricing, performance and optimization analytics
+                            Access to DeFi data should be uncensored and permissionless... <span style={{color: '#f636ad'}}>just like DeFi protocols themselves.</span> SimpleFi is fully open source, and serves <span style={{color: '#f636ad'}}>DeFi analytics as a public good. </span> Join us!
                         </Text>
                         <Card direction={{ base: 'column', md: 'row', sm: 'column'}} bg="transparent" border="none" boxShadow="none" justify="space-between">
                             <Card bg="transparent" border="none" boxShadow="none" justify="center" width={useBreakpointValue({ sm: '100%', md: '45%', base: '100%' })} px={1}>
@@ -230,10 +244,10 @@ export const Landing = () => {
                                     size={useBreakpointValue({ sm: 'sm', md: 'xs', base: 'xs'})}
                                     paddingY={4}
                                     color="white"
-                                > Account Data
+                                > Help build SimpleFi
                                 </Heading>
                                 <Text fontSize={useBreakpointValue({ sm: 'md', md: 'large', base: 'md' })}  color="white">
-                                Analytics for every DeFi account, including current and historical portfolio positions, ROI and APY, idle and invested assets and portfolio optimization insights.
+                                Our data and analytics pipelines are entirely coded in Rust. Visit our github and help us make the platform even more powerful.
                                 </Text>
                             </Card>
                             {!isDesktop && <Spacer />}
@@ -244,26 +258,23 @@ export const Landing = () => {
                                     paddingY={4}
                                     color="white"
                                 > 
-                                    Market Data
+                                    Participate in the network
                                 </Heading>
                                 <Text fontSize={useBreakpointValue({ sm: 'md', md: 'large', base: 'md' })} color="white">
-                                    General market-level analytics for all DeFi protocols, including pricing for 100k+ tokens (incl. LP tokens), pool ROI and APY, volumetric data, and much more.
+                                    Don&apos;t let private companies control the era of AI. Help us build and run the decentralized network that serves our open DeFi data sets.
                                 </Text>
                             </Card>
                         </Card>
                     </CardBody>
                         <Stack direction={{ base: 'column', md: 'row' }} spacing={{ base: '3', md: '6' }} marginTop={5}>
-                            <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'md' })} onClick={() => navigate('/api/documentation')}>
-                                API Documentation
-                            </Button>
-                            <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'md' })} onClick={() => window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')}>
-                                Get API Key
+                            <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'md' })} onClick={() => window.open('https://github.com/SimpleFi-finance/', '_blank')}>
+                                Contribute now
                             </Button>
                         </Stack>
                 </Card>
             </Box>
             <Box position="relative" width={{ lg: '80%', sm: '100%', md: '80%', base: '100%' }} margin="auto" mb={4}>
-                <Heading  as='h2' size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm'})} py={{ base: '2', md: '4' }}>Trusted By</Heading>
+                <Heading  as='h2' size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm'})} py={{ base: '2', md: '4' }}>Trusted by</Heading>
                 <SimpleGrid columns={useBreakpointValue({base: 2, sm: 2, xs: 2, md: 2, lg: 4})} spacing={2}>
                         {trustedBy.map(el=> (
                             <Image

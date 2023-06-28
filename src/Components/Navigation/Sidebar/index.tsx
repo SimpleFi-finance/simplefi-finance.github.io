@@ -33,7 +33,6 @@ export const Sidebar = () => {
                 <NavButton onClick={() => navigate('/')} label="Home" icon={FiHome} isActive={pathname === '/'}/>
                 <NavButton onClick={() => navigate('/careers')} label="Careers" icon={FiUsers} isActive={pathname === '/careers'} />
                 <NavButton onClick={() => navigate('/api/documentation')} label="API docs" icon={TbApi} isActive={pathname === '/api/documentation'}/>
-                <NavButton onClick={() => window.open("https://subgraphs.docs.simplefi.finance/subgraph-development-documentation/dashboard-integration", "_blank")} label="Subgraphs Docs" icon={GrGraphQl} isActive={pathname === '/subgraphs/documentation'}/>
                 <NavButton onClick={() => navigate('/#newsletter')} label="Newsletter" icon={HiOutlineNewspaper}/>
             </Stack>
         </Flex>
