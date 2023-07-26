@@ -61,6 +61,7 @@ export const MailchimpForm = ({
         size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm' })}
         py={{ base: '2', md: '4' }}
         mb={5}
+        color="sip-purple.900"
       >
         Get our newsletter
       </Heading>
@@ -88,7 +89,10 @@ export const MailchimpForm = ({
           })}
           value={value}
           onChange={(e) => handleInput(e.target.value)}
-          color="black"
+          placeholder='your email address'
+          _placeholder={{ opacity: 1, color: 'gray.500' }}
+          background="sip-dark.700"
+          color="white"
         />
         {isError ? (
           <FormHelperText color="red" fontStyle="semibold" fontSize="md" width={useBreakpointValue({
@@ -110,9 +114,9 @@ export const MailchimpForm = ({
           </FormHelperText>
         )}
         <Button
-          variant="primary"
+          variant="simplefi-highlighted"
+          colorScheme="sip-purple"
           isLoading={statusValue === 'sending'}
-          
           size={useBreakpointValue({ base: 'md', md: 'md', sm: 'md' })}
           width={useBreakpointValue({ base: '30%', sm: '100%', md: '20%' })}
           mt={2}

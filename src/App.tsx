@@ -12,6 +12,7 @@ function App() {
     <Flex 
       direction='column'
       flex="1"
+      color="sip-dark.900"
     >
         <NavBar
           isOpen={isOpen}

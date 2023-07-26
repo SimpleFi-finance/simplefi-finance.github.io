@@ -3,7 +3,6 @@ import {
   Flex,
   Stack,
 } from '@chakra-ui/react'
-import { GrGraphQl } from "react-icons/gr";
 
 import {
   FiHome,
@@ -12,7 +11,6 @@ import {
 import {
     HiOutlineNewspaper
 } from 'react-icons/hi'
-import { TbApi } from "react-icons/tb";
 import { NavButton } from './NavButton'
 import {useNavigate, useLocation} from "react-router-dom";
 
@@ -32,7 +30,7 @@ export const Sidebar = () => {
             <Stack spacing={{ base: '5', sm: '6' }} width="80%">
                 <NavButton onClick={() => navigate('/')} label="Home" icon={FiHome} isActive={pathname === '/'}/>
                 <NavButton onClick={() => navigate('/careers')} label="Careers" icon={FiUsers} isActive={pathname === '/careers'} />
-                <NavButton onClick={() => navigate('/api/documentation')} label="API docs" icon={TbApi} isActive={pathname === '/api/documentation'}/>
+                {/* <NavButton onClick={() => navigate('/api/documentation')} label="API docs" icon={TbApi} isActive={pathname === '/api/documentation'}/> */}
                 <NavButton onClick={() => navigate('/#newsletter')} label="Newsletter" icon={HiOutlineNewspaper}/>
             </Stack>
         </Flex>

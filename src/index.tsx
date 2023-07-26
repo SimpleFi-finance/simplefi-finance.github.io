@@ -4,34 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { theme as proTheme } from '@chakra-ui/pro-theme'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
+import theme from './theme';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-export const theme = extendTheme(
-  {
-    colors: { ...proTheme.colors, brand: proTheme.colors.pink },
-    config: {
-      cssVarPrefix: 'simp',
-      initialColorMode: 'dark',
-      useSystemColorMode: true,
-    },
-    styles: {
-      global: {
-        // styles for the `body`
-        body: {
-          bg: '#000c2d',
-          color: 'white',
-        },
-      }
-    }
-  },
-  proTheme,
-)
-
-
+console.log(theme)
 root.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>

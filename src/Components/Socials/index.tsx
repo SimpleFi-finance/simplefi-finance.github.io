@@ -31,13 +31,13 @@ export const Socials = (props: IProps) => {
   ]
 
   return (
-    <ButtonGroup variant="ghost" color="white" size={size || "lg"} {...otherProps}>
+    <ButtonGroup size={size || "lg"} {...otherProps}>
       {socials.map((social) => (
         <IconButton 
           key={social.name}
           aria-label={social.name}
           fontSize={"x-large"}
-          colorScheme='whiteAlpha'
+          colorScheme='gray'
           icon={social.icon}
           variant="link"
           onClick={() => window.open(social.url, '_blank')}
