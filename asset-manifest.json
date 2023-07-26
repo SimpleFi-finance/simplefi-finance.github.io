@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.84abf22d.css",
-    "main.js": "/static/js/main.0a8a5eb0.js",
-    "static/js/787.fcf92e85.chunk.js": "/static/js/787.fcf92e85.chunk.js",
-    "static/media/simplefi-universe-desktop.png": "/static/media/simplefi-universe-desktop.54328786eeb35cd64f90.png",
-    "static/media/simplefi-universe-mobile.png": "/static/media/simplefi-universe-mobile.409f05c2b8c50d3c01a5.png",
-    "static/media/NFT4.webm": "/static/media/NFT4.ea17b6f4b62a81427808.webm",
-    "index.html": "/index.html",
-    "main.84abf22d.css.map": "/static/css/main.84abf22d.css.map",
-    "main.0a8a5eb0.js.map": "/static/js/main.0a8a5eb0.js.map",
-    "787.fcf92e85.chunk.js.map": "/static/js/787.fcf92e85.chunk.js.map"
+    "main.css": "/client/static/css/main.84abf22d.css",
+    "main.js": "/client/static/js/main.4501f09f.js",
+    "static/js/787.fcf92e85.chunk.js": "/client/static/js/787.fcf92e85.chunk.js",
+    "static/media/simplefi-universe-desktop.png": "/client/static/media/simplefi-universe-desktop.54328786eeb35cd64f90.png",
+    "static/media/simplefi-universe-mobile.png": "/client/static/media/simplefi-universe-mobile.409f05c2b8c50d3c01a5.png",
+    "static/media/NFT4.webm": "/client/static/media/NFT4.ea17b6f4b62a81427808.webm",
+    "index.html": "/client/index.html",
+    "main.84abf22d.css.map": "/client/static/css/main.84abf22d.css.map",
+    "main.4501f09f.js.map": "/client/static/js/main.4501f09f.js.map",
+    "787.fcf92e85.chunk.js.map": "/client/static/js/787.fcf92e85.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.84abf22d.css",
-    "static/js/main.0a8a5eb0.js"
+    "static/js/main.4501f09f.js"
   ]
 }
