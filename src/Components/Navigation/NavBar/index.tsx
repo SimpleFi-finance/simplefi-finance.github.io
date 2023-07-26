@@ -50,7 +50,7 @@ export interface INavBarProps {
                       borderRadius: '0px',
                       transition: 'all 0.2s ease-in-out',
                     }}>Careers</Button>
-                    <Button 
+                    {/* <Button 
                       onClick={() => navigate('/api/documentation')}
                       isActive={location.pathname === '/api/documentation'} 
                       _active={{
@@ -59,7 +59,7 @@ export interface INavBarProps {
                         borderRadius: '0px',
                         transition: 'all 0.2s ease-in-out',
                       }}
-                    >API Documentation</Button>
+                    >API Documentation</Button> */}
                     <Button 
                       onClick={() => navigate('/#subscribe')} 
                       _active={{

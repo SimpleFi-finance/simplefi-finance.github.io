@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Stack, Button, useBreakpointValue, HStack, Text, Heading } from "@chakra-ui/react";
+import { Box, Stack, Button, useBreakpointValue, Text } from "@chakra-ui/react";
 import { Socials } from "../../Components";
 export const Careers = (): React.ReactElement => {
     return (
@@ -25,10 +25,10 @@ export const Careers = (): React.ReactElement => {
                             </Text>
                         </Stack>
                         <Stack direction={{ base: 'column', md: 'row' }} spacing="3" display="flex" justifyContent="center">
-                            <Button variant="primary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => document.location = "mailto:joinus@simplefi.finance?subject=I'm interested in joining the team!"}>
+                            <Button variant="simplefi-highlighted" colorScheme="sip-purple" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => document.location = "mailto:joinus@simplefi.finance?subject=I'm interested in joining the team!"}>
                                 Email Us
                             </Button>
-                            <Button variant="secondary" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open("https://discord.gg/hu9mf4u5pM", "_blank")}>
+                            <Button variant="simplefi-highlighted" colorScheme="sip-dark" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open("https://discord.gg/hu9mf4u5pM", "_blank")}>
                                 Join Discord
                             </Button>
                         </Stack>
