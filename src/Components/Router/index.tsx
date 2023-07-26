@@ -7,8 +7,9 @@ export const Router = (): React.ReactElement => {
         <Routes>
             <Route path="/" element={<Landing />}/>
             <Route path="/careers" element={<Careers />}/>
-            <Route path="/api/documentation" element={<APIDocs />}/>
+            {/* <Route path="/api/documentation" element={<APIDocs />}/> */}
             <Route path="/subgraphs/documentation" element={<SubgraphsDocs />}/>
+            <Route path="*" element={<Landing />}/>
         </Routes>
     )
 } 
