@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Careers, Landing, APIDocs, SubgraphsDocs } from "../../Features";
 
 export const Router = (): React.ReactElement => {
@@ -8,8 +8,8 @@ export const Router = (): React.ReactElement => {
             <Route path="/" element={<Landing />}/>
             <Route path="/careers" element={<Careers />}/>
             {/* <Route path="/api/documentation" element={<APIDocs />}/> */}
-            <Route path="/subgraphs/documentation" element={<SubgraphsDocs />}/>
-            <Route path="*" element={<Landing />}/>
+            {/* <Route path="/subgraphs/documentation" element={<SubgraphsDocs />}/> */}
+            <Route path="*" element={<Navigate to="/" replace />}/>
         </Routes>
     )
 } 
