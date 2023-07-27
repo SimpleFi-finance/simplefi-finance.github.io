@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/SimpleFi-finance/client/issues"
   },
-  "homepage": "https://simplefi-finance.github.io/client/",
+  "homepage": "https://simplefi-finance.github.io",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.15",
     "@chakra-ui/pro-theme": "^0.0.57",
@@ -50,7 +50,7 @@
     "prettier": "prettier --write \"**/*.+(json|yml|css|md|mdx)\"",
     "typecheck": "tsc --noEmit",
     "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build"
+    "deploy" : "gh-pages master -d build"
   },
   "eslintConfig": {
     "extends": [
