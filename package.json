@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/SimpleFi-finance/client/issues"
   },
-  "homepage": "http://simplefi-finance.github.io/client",
+  "homepage": "https://simplefi-finance.github.io/client/",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.15",
     "@chakra-ui/pro-theme": "^0.0.57",
