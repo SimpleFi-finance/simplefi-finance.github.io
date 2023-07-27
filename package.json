@@ -50,7 +50,7 @@
     "prettier": "prettier --write \"**/*.+(json|yml|css|md|mdx)\"",
     "typecheck": "tsc --noEmit",
     "predeploy" : "npm run build",
-    "deploy" : "gh-pages master -d build"
+    "deploy" : "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
