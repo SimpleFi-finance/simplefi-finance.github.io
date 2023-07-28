@@ -22,7 +22,6 @@ import Typewriter from 'typewriter-effect'
 
 export const Landing = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true })
-//   const navigate = useNavigate()
 
   const trustedBy = [
     {
@@ -63,7 +62,7 @@ export const Landing = () => {
   }, [faqSectionRef, hash])
 
   return (
-    <Box as="section" bg="inherit" px={2}>
+    <Box as="section" bg="inherit" px={2} m={{ md: 2, base: 4, lg: 2 }}>
       <Box
         position="relative"
         minH="calc(100vh - 82px)"
@@ -87,6 +86,7 @@ export const Landing = () => {
                 <Heading
                   bgGradient="linear(to-r, #ab5fac 0%, #2665bd 40%)"
                   bgClip="text"
+                  as="h1"
                   size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}
                 >
                   <Typewriter
@@ -96,12 +96,21 @@ export const Landing = () => {
                         'Lightning Fast',
                         'Multichain',
                         'Lightweight',
-                        'Orgasmic',
+                        'Sexy',
                       ],
                       autoStart: true,
                       loop: true,
                     }}
                   />
+                </Heading>
+                <Heading
+                  bgClip="text"
+                  as="h2"
+                  size={useBreakpointValue({ base: 'md', md: 'md', sm: 'sm' })}
+                  pt={{ base: '2', md: '2' }}
+                  color="white"
+                >
+                  DeFi data analytics
                 </Heading>
               </Stack>
               <Text fontSize={{ base: 'md', md: 'lg', sm: 'md' }} color="white">
@@ -138,7 +147,7 @@ export const Landing = () => {
             <Stack direction={{ base: 'column', md: 'row' }} spacing="3">
               <Button
                 variant="simplefi-highlighted"
-                colorScheme="sip-purple"
+                colorScheme="sip-purple-blue-gradient"
                 size={useBreakpointValue({ base: 'md', md: 'lg' })}
                 onClick={() =>
                   window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')
@@ -148,7 +157,7 @@ export const Landing = () => {
               </Button>
               <Button
                 variant="simplefi-highlighted"
-                colorScheme="sip-purple"
+                colorScheme="sip-purple-blue-gradient"
                 size={useBreakpointValue({ base: 'md', md: 'lg' })}
                 onClick={() =>
                   window.open('https://github.com/SimpleFi-finance/', '_blank')
@@ -211,14 +220,14 @@ export const Landing = () => {
           <CardHeader py={useBreakpointValue({ base: '6', md: '4' })}>
             <Heading
               as="h1"
-              size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm' })}
+              size={useBreakpointValue({ sm: 'xs', md: 'xs', base: 'xs' })}
               color="sip-purple.900"
             >
               Explore
             </Heading>
             <Heading
               as="h2"
-              size={useBreakpointValue({ sm: 'xs', md: 'xs', base: 'xs' })}
+              size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm' })}
               py={{ base: '2', md: '4' }}
               color="sip-dark.900"
             >
@@ -285,7 +294,7 @@ export const Landing = () => {
                 <Text color="sip-purple.900" paddingX={2}>
                   Unified
                 </Text>
-                <Text color="sip-dark.800"> API</Text>
+                <Text color="sip-dark.900"> API</Text>
               </Heading>
               <Text>
                 Our API serves comparable, granular data such as pool-level ROI
@@ -312,7 +321,7 @@ export const Landing = () => {
                 <Text color="sip-purple.900" paddingX={2}>
                   Modular
                 </Text>
-                <Text color="sip-dark.800"> engine</Text>
+                <Text color="sip-dark.900"> engine</Text>
               </Heading>
               <Text>
                 Run our engine to self-host the data for your DeFi app or
@@ -356,7 +365,7 @@ export const Landing = () => {
             </Heading>
             <Heading
               as="h2"
-              size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'xs' })}
+              size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm' })}
               py={{ base: '2', md: '4' }}
             >
               Join the open data revolution
@@ -463,7 +472,7 @@ export const Landing = () => {
           >
             <Button
               variant="simplefi-highlighted"
-              colorScheme="sip-purple"
+              colorScheme="sip-purple-blue-gradient"
               size={useBreakpointValue({ base: 'md', md: 'md' })}
               onClick={() =>
                 window.open('https://github.com/SimpleFi-finance/', '_blank')
@@ -482,8 +491,10 @@ export const Landing = () => {
       >
         <Heading
           as="h2"
-          size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm' })}
+          size={useBreakpointValue({ sm: 'md', md: 'md', base: 'md' })}
           py={{ base: '2', md: '4' }}
+          mb={2}
+          color="white"
         >
           Trusted by
         </Heading>
@@ -498,7 +509,7 @@ export const Landing = () => {
               alt={el.name}
               objectFit="contain"
               margin="auto"
-              bg="white"
+              bg="#fff"
               borderRadius="xl"
               marginBottom={4}
             />

@@ -25,7 +25,7 @@ export const Careers = (): React.ReactElement => {
                             </Text>
                         </Stack>
                         <Stack direction={{ base: 'column', md: 'row' }} spacing="3" display="flex" justifyContent="center">
-                            <Button variant="simplefi-highlighted" colorScheme="sip-purple" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => document.location = "mailto:joinus@simplefi.finance?subject=I'm interested in joining the team!"}>
+                            <Button variant="simplefi-highlighted" colorScheme="sip-purple-blue-gradient" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => document.location = "mailto:joinus@simplefi.finance?subject=I'm interested in joining the team!"}>
                                 Email Us
                             </Button>
                             <Button variant="simplefi-highlighted" colorScheme="sip-dark" size={useBreakpointValue({ base: 'md', md: 'lg' })} onClick={() => window.open("https://discord.gg/hu9mf4u5pM", "_blank")}>

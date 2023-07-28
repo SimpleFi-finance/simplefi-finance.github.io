@@ -12,6 +12,10 @@ import {Button} from './components';
 
 const overrides = {
   // Other foundational style overrides go here
+  fonts: {
+    heading: `'Proxima Nova', sans-serif`,
+    body: `'Proxima Nova', sans-serif`,
+  },
   config: {
     cssVarPrefix: 'simp',
     initialColorMode: 'dark',

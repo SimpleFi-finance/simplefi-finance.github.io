@@ -58,10 +58,10 @@ export const MailchimpForm = ({
     <>
       <Heading
         as="h2"
-        size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm' })}
+        size={useBreakpointValue({ sm: 'md', md: 'md', base: 'md' })}
         py={{ base: '2', md: '4' }}
-        mb={5}
-        color="sip-purple.900"
+        mb={1}
+        color="white"
       >
         Get our newsletter
       </Heading>
@@ -115,7 +115,7 @@ export const MailchimpForm = ({
         )}
         <Button
           variant="simplefi-highlighted"
-          colorScheme="sip-purple"
+          colorScheme="sip-purple-blue-gradient"
           isLoading={statusValue === 'sending'}
           size={useBreakpointValue({ base: 'md', md: 'md', sm: 'md' })}
           width={useBreakpointValue({ base: '30%', sm: '100%', md: '20%' })}

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Box, Container, Divider, Spacer, Stack, Text } from '@chakra-ui/react'
+import { Box, Container, Divider, Spacer, Text } from '@chakra-ui/react'
 
 interface IProps {
     title: string;

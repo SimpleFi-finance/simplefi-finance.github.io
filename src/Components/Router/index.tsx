@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { Careers, Landing, APIDocs, SubgraphsDocs } from "../../Features";
+import { Careers, Landing } from "../../Features";
 
 export const Router = (): React.ReactElement => {
     return (
