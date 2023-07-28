@@ -11,7 +11,6 @@ import { Socials } from '../../Socials'
 export const Footer = (props: BoxProps) => {
   return (
     <Box>
-
       <Divider borderColor="gray.200" py="2px" my={2} />
       <Box
         as="footer"
@@ -28,7 +27,7 @@ export const Footer = (props: BoxProps) => {
         })}
         justifyContent="space-between"
         margin="auto"
-        width={{ lg: '80%', sm: '100%' }}
+        width={{ lg: '95%', sm: '100%' }}
       >
         <Text
           margin={useBreakpointValue({

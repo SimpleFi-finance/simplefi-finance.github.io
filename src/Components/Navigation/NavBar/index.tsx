@@ -29,9 +29,9 @@ export const NavBar = (props: INavBarProps) => {
     <Box
       as="section"
       pb={{ base: '1', md: '2' }}
-      // position="relative"
+
+      width={{ lg: '95%', sm: '100%' }}
       margin="auto"
-      width={{ lg: '80%', sm: '100%' }}
     >
       <Box as="nav" bg="transparent" color="on-accent" role="navigation">
         <Container py={{ base: '3', lg: '4' }} maxW="100%">
