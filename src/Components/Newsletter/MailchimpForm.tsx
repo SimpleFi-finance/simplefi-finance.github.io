@@ -119,7 +119,7 @@ export const MailchimpForm = ({
           isLoading={statusValue === 'sending'}
           size={useBreakpointValue({ base: 'md', md: 'md', sm: 'md' })}
           width={useBreakpointValue({ base: '30%', sm: '100%', md: '20%' })}
-          mt={2}
+          mt={6}
           onClick={() => onSubmitEmail()}
           isDisabled={isError || value === ''}
         >

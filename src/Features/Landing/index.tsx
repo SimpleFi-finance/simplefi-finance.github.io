@@ -62,32 +62,35 @@ export const Landing = () => {
   }, [faqSectionRef, hash])
 
   return (
-    <Box as="section" bg="inherit" px={2} m={{ md: 2, base: 4, lg: 2 }}>
+    <Box as="section" bg="inherit" px={2} m={{ md: 1, base: 2, lg: 2 }}>
       <Box
         position="relative"
-        minH="calc(100vh - 82px)"
-        width={{ lg: '80%', sm: '100%' }}
+        minH="calc(100vh - 80px)"
+        width="100%"
         margin="auto"
         justifyContent="center"
         display="flex"
       >
         <Stack
           direction={{ base: 'column', lg: 'row' }}
-          spacing={{ base: '8' }}
+          spacing={{ base: '1' }}
+
+          paddingX={{ base: '4', md: '8', lg: '10' }}
           align={{ md: 'center' }}
           margin="auto"
         >
-          <Stack spacing={{ base: '8', md: '12' }}>
+          <Stack spacing={{ base: '8', md: '12' }} paddingLeft={{ base: '0', md: '0', lg: '10' }}>
             <Stack
               spacing={{ base: '4', md: '6' }}
-              maxW={{ md: 'xl', lg: 'md', xl: 'xl' }}
+              
+              // maxW={{ md: '95%', lg: '90%', xl: '90%' }}
             >
               <Stack>
                 <Heading
                   bgGradient="linear(to-r, #ab5fac 0%, #2665bd 40%)"
                   bgClip="text"
                   as="h1"
-                  size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}
+                  size={useBreakpointValue({ base: 'lg', md: 'xl', sm: 'lg' })}
                 >
                   <Typewriter
                     options={{
@@ -106,14 +109,14 @@ export const Landing = () => {
                 <Heading
                   bgClip="text"
                   as="h2"
-                  size={useBreakpointValue({ base: 'md', md: 'md', sm: 'sm' })}
+                  size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}
                   pt={{ base: '2', md: '2' }}
                   color="white"
                 >
                   DeFi data analytics
                 </Heading>
               </Stack>
-              <Text fontSize={{ base: 'md', md: 'lg', sm: 'md' }} color="white">
+              <Text fontSize={{ base: 'lg', md: 'xl', sm: 'lg' }} color="white">
                 Join DeFi&apos;s open data revolution. Get the most advanced
                 analytics via our API or by running our open-source engine for
                 free.
@@ -121,15 +124,14 @@ export const Landing = () => {
             </Stack>
             {!isDesktop && (
               <Box
-                // pos={{ lg: 'absolute' }}
                 right="0"
                 top="0"
-                w={{ base: 'full', md: '100%', lg: '60%' }}
+                w={{ base: 'full', md: '100%' }}
+                h={{ base: '90%', md: '90%' }}
+                paddingY={{ base: '10%', md: '0', lg: '0' }}
               >
                 <video
                   style={{
-                    width: '100%',
-                    height: '100%',
                     margin: 'auto',
                     objectFit: 'contain',
                   }}
@@ -144,11 +146,11 @@ export const Landing = () => {
                 </video>
               </Box>
             )}
-            <Stack direction={{ base: 'column', md: 'row' }} spacing="3">
+            <Stack direction={{ base: 'column', md: 'row' }} spacing="4">
               <Button
                 variant="simplefi-highlighted"
                 colorScheme="sip-purple-blue-gradient"
-                size={useBreakpointValue({ base: 'md', md: 'lg' })}
+                size={useBreakpointValue({ base: 'md', md: 'lg'})}
                 onClick={() =>
                   window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')
                 }
@@ -170,18 +172,12 @@ export const Landing = () => {
           </Stack>
           {isDesktop && (
             <Box
-              // pos={{ lg: 'absolute' }}
-              right="0"
-              top="0"
-              w={{ base: 'full', md: '100%', lg: '50%' }}
-              sx={{
-                clipPath: { lg: 'polygon(7% 0%, 100% 0%, 100% 100%, 0% 100%)' },
-              }}
+              w={{ base: 'full', md: '100%', lg: '60%' }}
             >
               <video
                 style={{
-                  width: '100%',
-                  height: '60%',
+                  // width: '100%',
+                  // height: '80%',
                   margin: 'auto',
                   objectFit: 'contain',
                 }}
@@ -200,7 +196,8 @@ export const Landing = () => {
       </Box>
       <Box
         position="relative"
-        width={{ lg: '80%', sm: '100%', md: '80%', base: '100%' }}
+        width="100%"
+        padding={{ base: '0', md: '40px' }}
         minH={useBreakpointValue({
           default: '100vh',
           sm: '100vh',
@@ -291,7 +288,7 @@ export const Landing = () => {
                 display="flex"
                 flexDir="row"
               >
-                <Text color="sip-purple.900" paddingX={2}>
+                <Text color="sip-purple.900" style={{padding: "0px 4px 0px 0px"}}>
                   Unified
                 </Text>
                 <Text color="sip-dark.900"> API</Text>
@@ -318,7 +315,7 @@ export const Landing = () => {
                 display="flex"
                 flexDir="row"
               >
-                <Text color="sip-purple.900" paddingX={2}>
+                <Text color="sip-purple.900" style={{padding: "0px 4px 0px 0px"}}>
                   Modular
                 </Text>
                 <Text color="sip-dark.900"> engine</Text>
@@ -334,7 +331,8 @@ export const Landing = () => {
       </Box>
       <Box
         position="relative"
-        width={{ lg: '80%', sm: '100%', md: '90%' }}
+        width="100%"
+        padding={{ base: '0', md: '40px' }}
         minH={useBreakpointValue({
           default: '100vh',
           sm: '100vh',
@@ -347,9 +345,8 @@ export const Landing = () => {
         <Card
           bg="transparent"
           p={{ base: '0', md: '10' }}
-          paddingX={{ base: '0', sm: '2', lg: '10' }}
+          paddingX={{ base: '0', sm: '2', lg: '5' }}
           height="full"
-          w={useBreakpointValue({ base: '100%', md: '90%', lg: '90%' })}
         >
           <CardHeader
             py={useBreakpointValue({ base: '8', md: '8' })}
@@ -485,7 +482,8 @@ export const Landing = () => {
       </Box>
       <Box
         position="relative"
-        width={{ lg: '80%', sm: '100%', md: '80%', base: '100%' }}
+        width="100%"
+        padding={{ base: '0', md: '40px' }}
         margin="auto"
         mb={4}
       >
@@ -493,14 +491,14 @@ export const Landing = () => {
           as="h2"
           size={useBreakpointValue({ sm: 'md', md: 'md', base: 'md' })}
           py={{ base: '2', md: '4' }}
-          mb={2}
+          mb={4}
           color="white"
         >
           Trusted by
         </Heading>
         <SimpleGrid
           columns={useBreakpointValue({ base: 2, sm: 2, xs: 2, md: 2, lg: 4 })}
-          spacing={2}
+          spacing={4}
         >
           {trustedBy.map((el) => (
             <Image
@@ -518,10 +516,12 @@ export const Landing = () => {
       </Box>
       <Box
         position="relative"
-        width={{ lg: '80%', sm: '100%', md: '80%', base: '100%' }}
+        width="100%"
+        padding={{ base: '0', md: '40px' }}
         margin="auto"
         id="subscribe"
         ref={faqSectionRef}
+        mb={4}
       >
         <Newsletter />
       </Box>
