@@ -70,11 +70,9 @@ export const Landing = () => {
     >
       <Box
         position="relative"
-        // minH="calc(100vh - 80px)"
+        minH="80dvh"
         width="100%"
         margin="auto"
-        padding="80px 0"  
-        justifyContent="center"
         display="flex"
       >
         <Stack
@@ -97,7 +95,7 @@ export const Landing = () => {
                   bgGradient="linear(to-r, #ab5fac 0%, #2665bd 40%)"
                   bgClip="text"
                   as="h1"
-                  size={useBreakpointValue({ base: 'lg', md: 'xl', sm: 'lg' })}
+                  size={useBreakpointValue({ base: 'lg', md: 'xl'})}
                 >
                   <Typewriter
                     options={{
@@ -106,7 +104,7 @@ export const Landing = () => {
                         'Lightning Fast',
                         'Multichain',
                         'Lightweight',
-                        'Sexy',
+                        'Electrifying',
                       ],
                       autoStart: true,
                       loop: true,
@@ -115,17 +113,20 @@ export const Landing = () => {
                 </Heading>
                 <Heading
                   bgClip="text"
-                  as="h2"
-                  size={useBreakpointValue({ base: 'md', md: 'lg', sm: 'md' })}
-                  pt={{ base: '2', md: '2' }}
+                  as="h1"
+                  size={useBreakpointValue({ base: 'md', md: 'xl', sm: 'md' })}
+                  // pt={{ base: '2', md: '2' }}
                   color="white"
+                  // fontWeight="bold"
                 >
                   DeFi data analytics
                 </Heading>
               </Stack>
-              <Text fontSize={{ base: 'lg', md: 'xl', sm: 'lg' }} color="white">
-                Join DeFi&apos;s open data revolution. Get the most advanced analytics 
-                via our API or by running our open-source engine for free.
+              <Text
+                fontSize={{ base: 'lg', md: '2xl', sm: 'lg' }}
+                color="white"
+              >
+                Get DeFi&apos;s most advanced analytics using our open source data engine or our API.
               </Text>
             </Stack>
             {!isDesktop && (
@@ -157,36 +158,41 @@ export const Landing = () => {
                 variant="simplefi-highlighted"
                 colorScheme="sip-purple-blue-gradient"
                 size={useBreakpointValue({ base: 'md', md: 'lg'})}
+                fontSize={{ md: 'lg'}}
                 onClick={() =>
+                  //ToDo: add alert
                   window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')
                 }
               >
-                Use our API
+                Use API
               </Button>
               <Button
                 variant="simplefi-highlighted"
                 colorScheme="sip-purple-blue-gradient"
                 size={useBreakpointValue({ base: 'md', md: 'lg' })}
+                fontSize={{ md: 'lg'}}
                 onClick={() =>
+                  //ToDo: add alert
                   window.open('https://github.com/SimpleFi-finance/', '_blank')
                 }
               >
-                Run your engine
+                Run engine
               </Button>
             </Stack>
             {isDesktop && <Socials size="xl" />}
           </Stack>
           {isDesktop && (
             <Box
-              w={{ base: 'full', md: '100%', lg: '100%' }}
+              w={{ base: 'full', md: '100%', lg: '70%' }}
+              display='flex'
+              justifyContent="center"
+              margin="auto"
             >
               <video
                 style={{
-                  // width: '100%',
-                  // height: '80%',
+                  width: '97%',
                   margin: 'auto',
                   objectFit: 'contain',
-                  transform: 'scale(1.3)'
                 }}
                 autoPlay
                 loop
@@ -455,7 +461,7 @@ export const Landing = () => {
                   size={useBreakpointValue({ sm: 'sm', md: 'xs', base: 'xs' })}
                   paddingY={4}
                 >
-                  Participate in the network
+                  Be part of the network
                 </Heading>
                 <Text
                   fontSize={useBreakpointValue({
@@ -464,9 +470,8 @@ export const Landing = () => {
                     base: 'md',
                   })}
                 >
-                  Don&apos;t let private companies control the era of AI. Help
-                  us build and run the decentralized network that serves our
-                  open DeFi data sets.
+                  AI shouldn&apos;t be controlled by private companies. Help
+                  serve SimpleFi&apos;s DeFi data sets as a public good via a decentralized network.
                 </Text>
               </Card>
             </Card>
