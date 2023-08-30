@@ -62,27 +62,34 @@ export const Landing = () => {
   }, [faqSectionRef, hash])
 
   return (
-    <Box as="section" bg="inherit" px={2} m={{ md: 1, base: 2, lg: 2 }}>
+    <Box
+      as="section"
+      bg="inherit"
+      px={2}
+      m={{ md: 1, base: 2, lg: 2 }}
+    >
       <Box
         position="relative"
-        minH="calc(100vh - 80px)"
+        // minH="calc(100vh - 80px)"
         width="100%"
         margin="auto"
+        padding="80px 0"  
         justifyContent="center"
         display="flex"
       >
         <Stack
           direction={{ base: 'column', lg: 'row' }}
           spacing={{ base: '1' }}
-
-          paddingX={{ base: '4', md: '8', lg: '10' }}
+          paddingX={{ base: '4', md: '8', lg: '14' }}
           align={{ md: 'center' }}
           margin="auto"
         >
-          <Stack spacing={{ base: '8', md: '12' }} paddingLeft={{ base: '0', md: '0', lg: '10' }}>
+          <Stack
+            spacing={{ base: '8', md: '12' }}
+            paddingLeft={{ base: '0', md: '0', lg: '10' }}
+          > 
             <Stack
               spacing={{ base: '4', md: '6' }}
-              
               // maxW={{ md: '95%', lg: '90%', xl: '90%' }}
             >
               <Stack>
@@ -117,9 +124,8 @@ export const Landing = () => {
                 </Heading>
               </Stack>
               <Text fontSize={{ base: 'lg', md: 'xl', sm: 'lg' }} color="white">
-                Join DeFi&apos;s open data revolution. Get the most advanced
-                analytics via our API or by running our open-source engine for
-                free.
+                Join DeFi&apos;s open data revolution. Get the most advanced analytics 
+                via our API or by running our open-source engine for free.
               </Text>
             </Stack>
             {!isDesktop && (
@@ -172,7 +178,7 @@ export const Landing = () => {
           </Stack>
           {isDesktop && (
             <Box
-              w={{ base: 'full', md: '100%', lg: '60%' }}
+              w={{ base: 'full', md: '100%', lg: '100%' }}
             >
               <video
                 style={{
@@ -180,14 +186,15 @@ export const Landing = () => {
                   // height: '80%',
                   margin: 'auto',
                   objectFit: 'contain',
+                  transform: 'scale(1.3)'
                 }}
                 autoPlay
                 loop
                 muted
               >
                 <source
-                  src={require('../../Assets/video/NFT4.webm')}
-                  type="video/webm"
+                  src={require('../../Assets/video/NFT4.mp4')}
+                  type="video/mp4"
                 />
               </video>
             </Box>
@@ -197,7 +204,7 @@ export const Landing = () => {
       <Box
         position="relative"
         width="100%"
-        padding={{ base: '0', md: '40px' }}
+        padding={{ base: '0', md: '4' }}
         minH={useBreakpointValue({
           default: '100vh',
           sm: '100vh',
@@ -208,13 +215,16 @@ export const Landing = () => {
       >
         <Card
           bgGradient="linear(to-br, #fcfcff 0,#edeeff 49.99%,#edeeff 60%)"
-          p={{ base: '2', md: '10' }}
           borderRadius={useBreakpointValue({ base: 'lg', sm: 'xs', md: 'md' })}
-          paddingX={{ base: '4', md: '8', lg: '10' }}
           height="full"
+          padding={{ base: '2', md: '10' }}
+          paddingX={{ base: '4', md: '8', lg: '10' }}
           //   color="sip-blue.900"
         >
-          <CardHeader py={useBreakpointValue({ base: '6', md: '4' })}>
+          <CardHeader
+            paddingLeft={{ base: '2', md: '10' }}
+            paddingY={useBreakpointValue({ base: '6', md: '4' })}
+          >
             <Heading
               as="h1"
               size={useBreakpointValue({ sm: 'xs', md: 'xs', base: 'xs' })}

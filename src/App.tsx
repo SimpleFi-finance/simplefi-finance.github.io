@@ -14,7 +14,7 @@ function App () {
       flex="1"
       color="sip-dark.900"
     >
-        <Main w={useBreakpointValue({base: '100vw', md: '100vw'})} p={0}>
+        <Main w={useBreakpointValue({base: '100%', md: '100%'})} p={0}>
           <NavBar
             isOpen={isOpen}
             onToggle={onToggle}
