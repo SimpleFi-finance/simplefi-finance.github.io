@@ -220,12 +220,11 @@ export const Landing = () => {
         margin="auto"
       >
         <Card
-          bgGradient="linear(to-br, #fcfcff 0,#edeeff 49.99%,#edeeff 60%)"
-          borderRadius={useBreakpointValue({ base: 'lg', sm: 'xs', md: 'md' })}
+          bgGradient="linear(to-br, #fcfcffEE 0,#edeeffFE 49.99%,#edeeffEF 60%)"
+          borderRadius={useBreakpointValue({ base: 'lg', sm: 'xs', md: 'lg' })}
           height="full"
           padding={{ base: '2', md: '10' }}
           paddingX={{ base: '4', md: '8', lg: '10' }}
-          //   color="sip-blue.900"
         >
           <CardHeader
             paddingLeft={{ base: '2', md: '10' }}
@@ -240,8 +239,10 @@ export const Landing = () => {
             </Heading>
             <Heading
               as="h2"
-              size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm' })}
-              py={{ base: '2', md: '4' }}
+              size={useBreakpointValue({ sm: 'sm', md: 'md', base: 'sm' })}
+              fontWeight='bold'
+              paddingY={{ base: '2', md: '4' }}
+              paddingBottom={{ base: '2', md: '8' }}
               color="sip-dark.900"
             >
               SimpleFi your data needs
@@ -288,31 +289,41 @@ export const Landing = () => {
             boxShadow="none"
             justify="space-evenly"
             align="flex-start"
+            marginTop={useBreakpointValue({ base: '0', md: '6' })}
           >
             <Card
               bg="transparent"
               border="none"
               boxShadow="none"
-              p={useBreakpointValue({ base: '2', md: '4' })}
+              marginRight={useBreakpointValue({ base: '0', md: '14' })}
+              paddingY={useBreakpointValue({ base: '2', md: '4' })}
+              paddingLeft={useBreakpointValue({ base: '2', md: '14' })}
+              paddingRight={useBreakpointValue({ base: '2', md: '0' })}
               justify="center"
               width={useBreakpointValue({ base: '100%', md: '45%' })}
               color="sip-dark.900"
             >
               <Heading
                 size={useBreakpointValue({ base: 'xs', md: 'xs', lg: 'md' })}
+                fontWeight={'bold'}
                 paddingY={4}
                 display="flex"
                 flexDir="row"
               >
-                <Text color="sip-purple.900" style={{padding: "0px 4px 0px 0px"}}>
+                <Text
+                  color="sip-purple.900"
+                  style={{padding: "0px 4px 0px 0px"}}>
                   Unified
                 </Text>
-                <Text color="sip-dark.900"> API</Text>
+                <Text color="sip-dark.900">
+                  API
+                </Text>
               </Heading>
-              <Text>
-                Our API serves comparable, granular data such as pool-level ROI
-                and account-level liquidation risk for all DeFi segments
-                including AMMs, borrowing, staking & perp protocols.
+              <Text
+                fontSize={useBreakpointValue({base: 'xs', md: 'xs', lg: 'xl' })}
+                fontWeight={"500"}
+              >
+                Advanced, comparable data at your fingertips for all DEX, borrowing, staking and perp protocols via our API.
               </Text>
             </Card>
             {!isDesktop && <Spacer />}
@@ -320,13 +331,14 @@ export const Landing = () => {
               bg="transparent"
               border="none"
               boxShadow="none"
-              p={useBreakpointValue({ base: '2', md: '4' })}
+              padding={useBreakpointValue({ base: '2', md: '4' })}
               justify="center"
-              width={useBreakpointValue({ base: '100%', md: '45%' })}
+              width={useBreakpointValue({ base: '100%', md: '44%' })}
               color="sip-dark.900"
             >
               <Heading
                 size={useBreakpointValue({ base: 'xs', md: 'xs', lg: 'md' })}
+                fontWeight={'bold'}
                 paddingY={4}
                 display="flex"
                 flexDir="row"
@@ -336,10 +348,11 @@ export const Landing = () => {
                 </Text>
                 <Text color="sip-dark.900"> engine</Text>
               </Heading>
-              <Text>
-                Run our engine to self-host the data for your DeFi app or
-                investment bot. Simply choose which chains and protocols you
-                want to cover and bootstrap your database in an instant.
+              <Text
+                fontSize={useBreakpointValue({base: 'xs', md: 'xs', lg: 'xl' })}
+                fontWeight={"500"}
+              >
+                Run the engine to self-host your data. Select which chains and protocols to track and bootstrap your database instantly.
               </Text>
             </Card>
           </Card>
