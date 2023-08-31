@@ -6,6 +6,7 @@ import {
   useBreakpointValue,
   Input,
   Button,
+  Stack
 } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 
@@ -56,12 +57,16 @@ export const MailchimpForm = ({
   }
   return (
     <>
+    <Stack
+      paddingLeft={{ base: '0', md: '10' }}
+    >
       <Heading
         as="h2"
         size={useBreakpointValue({ sm: 'md', md: 'md', base: 'md' })}
-        py={{ base: '2', md: '4' }}
-        mb={1}
+        paddingY={{ base: '2', md: '4' }}
+        marginBottom={3}
         color="white"
+        fontWeight='bold'
       >
         Get our newsletter
       </Heading>
@@ -76,8 +81,14 @@ export const MailchimpForm = ({
             md: 'md',
             lg: 'lg',
           })}
+          fontSize={useBreakpointValue({
+            sm: 'md',
+            md: 'xl',
+            base: 'md',
+          })}
+          paddingBottom={4}
         >
-          Stay updated on our product launches and network updates
+          Stay in the SimpleFi loop!
         </FormLabel>
         <Input
           type="email"
@@ -104,13 +115,16 @@ export const MailchimpForm = ({
             {message || 'Invalid email entered.'}
           </FormHelperText>
         ) : (
-          <FormHelperText color="white" width={useBreakpointValue({
+          <FormHelperText
+            color="white"
+            width={useBreakpointValue({
             default: '100%',
             xs: '80%',
             sm: '80%',
             md: '50%',
-          })}>
-            {message || "We'll never share your email."}
+          })}
+          >
+            {message || ""}
           </FormHelperText>
         )}
         <Button
@@ -126,6 +140,7 @@ export const MailchimpForm = ({
           Submit
         </Button>
       </FormControl>
+      </Stack>
     </>
   )
 }

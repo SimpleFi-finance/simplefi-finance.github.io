@@ -361,7 +361,7 @@ export const Landing = () => {
       <Box
         position="relative"
         width="100%"
-        padding={{ base: '0', md: '40px' }}
+        paddingX={{ base: '0', md: '40px' }}
         minH={useBreakpointValue({
           default: '100vh',
           sm: '100vh',
@@ -391,8 +391,9 @@ export const Landing = () => {
             </Heading>
             <Heading
               as="h2"
-              size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'sm' })}
-              py={{ base: '2', md: '4' }}
+              size={useBreakpointValue({ sm: 'sm', md: 'md', base: 'sm' })}
+              paddingY={{ base: '2', md: '4' }}
+              fontWeight='bold'
             >
               Join the open data revolution
             </Heading>
@@ -401,20 +402,21 @@ export const Landing = () => {
             <Text
               fontSize={useBreakpointValue({
                 sm: 'md',
-                md: 'large',
+                md: '3xl',
                 base: 'md',
               })}
               pb={2}
+              width={{md: '85%'}}
             >
-              Access to DeFi data should be uncensored and permissionless...{' '}
+              Access to DeFi data - like the{' '}
               <span style={{ color: '#f636ad' }}>
-                just like DeFi protocols themselves.
+                underlying protocols
               </span>{' '}
-              SimpleFi is fully open source, and serves{' '}
+              - should be uncensorable. SimpleFi is open source, and serves analytics as a {' '}
               <span style={{ color: '#f636ad' }}>
-                DeFi analytics as a public good.{' '}
+                public good.{' '}
               </span>{' '}
-              Join us!
+              
             </Text>
             <Card
               direction={{ base: 'column', md: 'row', sm: 'column' }}
@@ -422,6 +424,7 @@ export const Landing = () => {
               border="none"
               boxShadow="none"
               justify="space-between"
+              paddingTop={{base: '0', md:'6'}}
             >
               <Card
                 bg="transparent"
@@ -437,7 +440,7 @@ export const Landing = () => {
               >
                 <Heading
                   as="h2"
-                  size={useBreakpointValue({ sm: 'sm', md: 'xs', base: 'xs' })}
+                  size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'xs' })}
                   paddingY={4}
                   color="white"
                 >
@@ -447,7 +450,7 @@ export const Landing = () => {
                 <Text
                   fontSize={useBreakpointValue({
                     sm: 'md',
-                    md: 'large',
+                    md: 'xl',
                     base: 'md',
                   })}
                 >
@@ -471,7 +474,7 @@ export const Landing = () => {
               >
                 <Heading
                   as="h2"
-                  size={useBreakpointValue({ sm: 'sm', md: 'xs', base: 'xs' })}
+                  size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'xs' })}
                   paddingY={4}
                 >
                   Be part of the network
@@ -479,12 +482,12 @@ export const Landing = () => {
                 <Text
                   fontSize={useBreakpointValue({
                     sm: 'md',
-                    md: 'large',
+                    md: 'xl',
                     base: 'md',
                   })}
                 >
                   AI shouldn&apos;t be controlled by private companies. Help
-                  serve SimpleFi&apos;s DeFi data sets as a public good via a decentralized network.
+                  serve DeFi data sets as a public good via a decentralized network.
                 </Text>
               </Card>
             </Card>
@@ -499,6 +502,7 @@ export const Landing = () => {
               variant="simplefi-highlighted"
               colorScheme="sip-purple-blue-gradient"
               size={useBreakpointValue({ base: 'md', md: 'md' })}
+              fontSize={{ md: 'lg'}}
               onClick={() =>
                 window.open('https://github.com/SimpleFi-finance/', '_blank')
               }
@@ -518,9 +522,11 @@ export const Landing = () => {
         <Heading
           as="h2"
           size={useBreakpointValue({ sm: 'md', md: 'md', base: 'md' })}
-          py={{ base: '2', md: '4' }}
-          mb={4}
+          paddingY={{ base: '2', md: '4' }}
+          paddingLeft={{ base: '0', md: '10' }}
+          marginBottom={4}
           color="white"
+          fontWeight='bold'
         >
           Trusted by
         </Heading>
@@ -551,7 +557,7 @@ export const Landing = () => {
         ref={faqSectionRef}
         mb={4}
       >
-        <Newsletter />
+        <Newsletter/>
       </Box>
     </Box>
   )

@@ -14,7 +14,6 @@ export const Button: StyleConfig = {
                     },
                 },
             }
-        // )
         }
     }
 };
