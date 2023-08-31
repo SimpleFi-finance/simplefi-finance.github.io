@@ -203,6 +203,7 @@ export const Landing = () => {
                 muted
               >
                 <source
+                //ToDo: change to webm
                   src={require('../../Assets/video/NFT4.mp4')}
                   type="video/mp4"
                 />
@@ -214,7 +215,8 @@ export const Landing = () => {
       <Box
         position="relative"
         width="100%"
-        padding={{ base: '0', md: '4' }}
+        paddingX={{ base: '0', md: '4' }}
+        paddingY={{ base: '10', md: '4' }}
         minH={useBreakpointValue({
           default: '100vh',
           sm: '100vh',
@@ -227,6 +229,7 @@ export const Landing = () => {
           bgGradient="linear(to-br, #fcfcffEE 0,#edeeffFE 49.99%,#edeeffEF 60%)"
           borderRadius={useBreakpointValue({ base: 'lg', sm: 'xs', md: 'lg' })}
           height="full"
+          // Change this to PaddingY
           padding={{ base: '2', md: '10' }}
           paddingX={{ base: '4', md: '8', lg: '10' }}
         >
@@ -377,6 +380,7 @@ export const Landing = () => {
       >
         <Card
           bg="transparent"
+          //change to paddingY
           p={{ base: '0', md: '10' }}
           paddingX={{ base: '0', sm: '2', lg: '5' }}
           height="full"
@@ -519,7 +523,8 @@ export const Landing = () => {
       <Box
         position="relative"
         width="100%"
-        padding={{ base: '0', md: '40px' }}
+        paddingX={{ base: '0', md: '40px' }}
+        paddingY={{ base: '10', md: '40px' }}
         margin="auto"
         mb={4}
       >
