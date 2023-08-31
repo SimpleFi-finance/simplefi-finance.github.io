@@ -135,7 +135,7 @@ export const MailchimpForm = ({
           width={useBreakpointValue({ base: '30%', sm: '100%', md: '20%' })}
           mt={6}
           onClick={() => onSubmitEmail()}
-          isDisabled={isError || value === ''}
+          isDisabled={isError}
         >
           Submit
         </Button>
