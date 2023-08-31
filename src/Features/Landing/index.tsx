@@ -26,18 +26,22 @@ export const Landing = () => {
   const trustedBy = [
     {
       name: 'Figment',
+      color: 'white',
       img: require('../../Assets/img/partners/figment.png'),
     },
     {
       name: 'NEAR',
+      color: 'black',
       img: require('../../Assets/img/partners/near.png'),
     },
     {
       name: 'Stake Capital',
+      color: 'white',
       img: require('../../Assets/img/partners/stake.png'),
     },
     {
       name: 'Daedalus',
+      color: 'black',
       img: require('../../Assets/img/partners/daedalus.png'),
     },
   ]
@@ -541,7 +545,7 @@ export const Landing = () => {
               alt={el.name}
               objectFit="contain"
               margin="auto"
-              bg="#fff"
+              bg={el.color === 'white' ? "#fff" : "transparent"}
               borderRadius="xl"
               marginBottom={4}
             />
