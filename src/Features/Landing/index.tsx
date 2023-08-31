@@ -99,7 +99,7 @@ export const Landing = () => {
                   bgGradient="linear(to-r, #ab5fac 0%, #2665bd 40%)"
                   bgClip="text"
                   as="h1"
-                  size={useBreakpointValue({ base: 'lg', md: 'xl'})}
+                  size={useBreakpointValue({ base: 'md', md: 'xl'})}
                 >
                   <Typewriter
                     options={{
@@ -118,10 +118,8 @@ export const Landing = () => {
                 <Heading
                   bgClip="text"
                   as="h1"
-                  size={useBreakpointValue({ base: 'md', md: 'xl', sm: 'md' })}
-                  // pt={{ base: '2', md: '2' }}
+                  size={useBreakpointValue({ base: 'md', md: 'xl'})}
                   color="white"
-                  // fontWeight="bold"
                 >
                   DeFi data analytics
                 </Heading>
@@ -297,6 +295,7 @@ export const Landing = () => {
             justify="space-evenly"
             align="flex-start"
             marginTop={useBreakpointValue({ base: '0', md: '6' })}
+            paddingBottom={4}
           >
             <Card
               bg="transparent"
@@ -311,7 +310,7 @@ export const Landing = () => {
               color="sip-dark.900"
             >
               <Heading
-                size={useBreakpointValue({ base: 'xs', md: 'xs', lg: 'md' })}
+                size={useBreakpointValue({ base: 'xs', md: 'md'})}
                 fontWeight={'bold'}
                 paddingY={4}
                 display="flex"
@@ -327,7 +326,7 @@ export const Landing = () => {
                 </Text>
               </Heading>
               <Text
-                fontSize={useBreakpointValue({base: 'xs', md: 'xs', lg: 'xl' })}
+                fontSize={useBreakpointValue({base: 'md', md: 'xl'})}
                 fontWeight={"500"}
               >
                 Advanced, comparable data at your fingertips for all DEX, borrowing, staking and perp protocols via our API.
@@ -344,7 +343,7 @@ export const Landing = () => {
               color="sip-dark.900"
             >
               <Heading
-                size={useBreakpointValue({ base: 'xs', md: 'xs', lg: 'md' })}
+                size={useBreakpointValue({ base: 'xs', md: 'md' })}
                 fontWeight={'bold'}
                 paddingY={4}
                 display="flex"
@@ -356,8 +355,8 @@ export const Landing = () => {
                 <Text color="sip-dark.900"> engine</Text>
               </Heading>
               <Text
-                fontSize={useBreakpointValue({base: 'xs', md: 'xs', lg: 'xl' })}
-                fontWeight={"500"}
+                fontSize={useBreakpointValue({base: 'md', md: 'xl'})}
+                fontWeight={{md: "500"}}
               >
                 Run the engine to self-host your data. Select which chains and protocols to track and bootstrap your database instantly.
               </Text>
@@ -382,7 +381,7 @@ export const Landing = () => {
           bg="transparent"
           //change to paddingY
           p={{ base: '0', md: '10' }}
-          paddingX={{ base: '0', sm: '2', lg: '5' }}
+          paddingX={{ base: '2', lg: '5' }}
           height="full"
         >
           <CardHeader
@@ -409,7 +408,6 @@ export const Landing = () => {
           <CardBody px={useBreakpointValue({ base: '2', md: '4' })}>
             <Text
               fontSize={useBreakpointValue({
-                sm: 'md',
                 md: '3xl',
                 base: 'md',
               })}
@@ -448,7 +446,7 @@ export const Landing = () => {
               >
                 <Heading
                   as="h2"
-                  size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'xs' })}
+                  size={useBreakpointValue({base: 'xs', md: 'sm',})}
                   paddingY={4}
                   color="white"
                 >
@@ -485,7 +483,7 @@ export const Landing = () => {
                   size={useBreakpointValue({ sm: 'sm', md: 'sm', base: 'xs' })}
                   paddingY={4}
                 >
-                  Be part of the network
+                  Join the network
                 </Heading>
                 <Text
                   fontSize={useBreakpointValue({
@@ -523,7 +521,7 @@ export const Landing = () => {
       <Box
         position="relative"
         width="100%"
-        paddingX={{ base: '0', md: '40px' }}
+        paddingX={{ base: '4', md: '40px' }}
         paddingY={{ base: '10', md: '40px' }}
         margin="auto"
         mb={4}
@@ -560,7 +558,7 @@ export const Landing = () => {
       <Box
         position="relative"
         width="100%"
-        padding={{ base: '0', md: '40px' }}
+        padding={{ base: '4', md: '40px' }}
         margin="auto"
         id="subscribe"
         ref={faqSectionRef}
