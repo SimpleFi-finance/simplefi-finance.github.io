@@ -407,14 +407,15 @@ export const Landing = () => {
               pb={2}
               width={{md: '85%'}}
             >
-              Access to DeFi data - like the{' '}
+              Access to DeFi data should be {' '}
               <span style={{ color: '#f636ad' }}>
-                underlying protocols
-              </span>{' '}
-              - should be uncensorable. SimpleFi is open source, and serves analytics as a {' '}
+                uncensorable
+              </span>
+               , just like the underlying protocols. SimpleFi is open source, and serves analytics as a {' '}
               <span style={{ color: '#f636ad' }}>
-                public good.{' '}
-              </span>{' '}
+                public good
+              </span>
+              .
               
             </Text>
             <Card
