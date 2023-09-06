@@ -116,7 +116,7 @@ export const Landing = () => {
                 </Heading>
                 <Heading
                   bgClip="text"
-                  as="h1"
+                  as="h2"
                   size={useBreakpointValue({ base: 'md', md: 'xl'})}
                   color="white"
                 >
@@ -163,7 +163,7 @@ export const Landing = () => {
                 isDisabled={true}
                 title="Coming soon"
                 onClick={() =>
-                  window.open('https://forms.gle/pa4LonrFE63A2ygU7', '_blank')
+                  window.open('', '_blank')
                 }
               >
                 Use API
